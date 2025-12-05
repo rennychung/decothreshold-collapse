@@ -81,11 +81,27 @@ In realistic measurement processes, environmental decoherence ensures $C_{l1}(\r
 - **Requirements:** Python 3, NumPy, Matplotlib
 
 ## 6. Figures
-Double-slit quantum trajectories (objective bifurcation)
-<img width="1200" height="700" alt="double_slit_trajectories" src="https://github.com/user-attachments/assets/a77478ea-dbb8-489a-8c78-f04152e8482b" />
 
-Density matrix coherence collapse (vertical, tail-free)
-<img width="1000" height="600" alt="density_matrix_coherence" src="https://github.com/user-attachments/assets/f3b22eed-da34-40d9-8bb9-6cb0317091db" />
+This section illustrates the core simulation results that define the **Decoherence-Triggered Instant Pruning (DTC)** model.
+
+### Figure 1: Objective Bifurcation (Double-Slit Trajectories)
+
+This plot shows Monte Carlo trajectories for a quantum particle under the DTC model. Superposition persists until the trigger is activated, resulting in an instantaneous, tail-free jump to a single classical path.
+
+![Monte Carlo trajectories under DTC showing superposition followed by instantaneous collapse.](figures/figure1_double_slit_trajectories.png)
+
+### Figure 2: Coherence Collapse
+
+This figure demonstrates the smooth decay of coherence due to decoherence, which instantly triggers the pruning term ($\Gamma_0 \to \infty$) when the state hits the Irreversibility Threshold ($C_{\text{th}}$).
+
+![Time evolution of off-diagonal coherence C(ρ) showing the smooth decay followed by a vertical, objective collapse.](figures/figure2_density_matrix_coherence.png)
+
+### Figure 3: Theoretical Bounds and Parameter Space
+
+The DTC theory relies on the irreversibility threshold ($C_{\text{th}}$) and the maximum pruning rate ($\Gamma_0$). The plot below illustrates the allowed parameter space, confirming that the microscopic regime is safely separated from the instantaneous collapse regime.
+
+![Plot showing the theoretical boundaries and required constraints on the C_th and Gamma_0 parameter space for the DTC theory.](figures/figure3_parameter_space.png)
+
 
 ## 7. Philosophical Summary
 Objective collapse, in this framework, is not driven by consciousness, gravitational mass, or spontaneous stochastic fluctuations.
