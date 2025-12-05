@@ -6,13 +6,13 @@
 
 **Canonical Status:** This document is the definitive reference for Renny’s DTC theory.
 
----
+
 
 ## Abstract
 
 We present a new objective quantum collapse model—**Decoherence-Triggered Instant Pruning (DTC)**—governed by a modified master equation that implements a sharp, information-theoretic threshold for the irreversibility of quantum branches. We demonstrate, through exact numerical simulations in both trajectory and density-matrix formalisms, that the DTC model yields **objective, tail-free collapse** consistent with all standard quantum predictions and the Born rule, while offering a simulation-optimal approach to quantum reality.
 
----
+
 
 ## 1. Introduction
 
@@ -20,7 +20,7 @@ The measurement problem in quantum mechanics has motivated the search for object
 
 We propose the **Decoherence-Triggered Instant Pruning (DTC)** model, in which collapse is governed solely by the loss of recoverable information between quantum branches. Collapse occurs only and exactly when alternative outcomes become **irreversibly inaccessible** to the entire future universe, as diagnosed by the vanishing of off-diagonal coherence in the environmentally selected pointer basis. This approach is objective, operationally well-defined, and optimally efficient for simulation.
 
----
+
 
 ## 2. The DTC Master Equation
 
@@ -52,7 +52,7 @@ Coherence is quantified as $C(\rho)$. We use two measures:
 
 These measures are **monotonically related** and vanish together under strong decoherence, making the operational proxy the preferred choice for the trigger.
 
----
+
 
 ## 3. Fundamental Parameters
 
@@ -63,7 +63,7 @@ These measures are **monotonically related** and vanish together under strong de
 | $\kappa$ | Steepness of switch (logistic approximation) | $> 10^{20}$ | $\infty$ (sharp switch) |
 | $\gamma_k, L_k$ | Decoherence rates and operators | Set by environment | Standard QM |
 
----
+
 
 ## 4. Key Theorems and Consequences
 
@@ -73,7 +73,7 @@ These measures are **monotonically related** and vanish together under strong de
 * **No Superluminal Signaling:** Collapse occurs only **after** branches are irreversibly separated, preserving relativity and energy conservation.
 * **Simulation Efficiency:** The threshold provides an **optimal lazy-evaluation strategy**, allowing a simulator to free memory of all non-actualized branches the instant $C(\rho) < C_{\text{th}}$.
 
----
+
 
 ## 5. Numerical Implementation
 
@@ -91,7 +91,7 @@ Both simulation codes in this repository are faithful, exact numerical realizati
 * The variable `self.coherence` tracks the off-diagonal magnitude in the $\{|L\rangle, |R\rangle\}$ pointer basis.
 * When `self.coherence < C_th`, the wavefunction is instantaneously projected onto one of the two separating Gaussian packets according to the Born rule, which is mathematically equivalent to the Γ₀ → ∞ pruning term acting on the density matrix. **This equivalence holds because the projection onto one Gaussian packet exactly reproduces the action of the infinite-rate Lindblad term on a density matrix initially diagonalised by decoherence.**
 
----
+
 
 ## 6. Results and Figures
 
@@ -109,7 +109,7 @@ Figure 1 (double-slit trajectories): Monte Carlo trajectories under DTC with whi
 <img width="1000" height="600" alt="density_matrix_coherence" src="https://github.com/user-attachments/assets/3d3e0795-e638-4cd5-80e1-02869a96f227" />
 Figure 2 (coherence collapse): Time evolution of off-diagonal coherence C(ρ). Smooth decoherence until C_th (red line), then vertical drop to zero via infinite-rate pruning.
 
----
+
 
 ## 7. Discussion
 
@@ -123,13 +123,13 @@ Collapse is triggered exclusively by the **information-theoretic criterion** tha
 
 On this view, the wave function does not represent a multitude of equally real worlds. Instead, it encodes a single world: one that comprises both the actual and the possible, up until the point when irreversibility renders the alternatives no longer physically meaningful.
 
----
+
 
 ## 8. Known Limitations
 
 Like all existing objective-collapse models (GRW, CSL, Diósi–Penrose), DTC is currently non-relativistic. A fully covariant extension remains an open problem. Additionally, the ideal $\Gamma_0 \to \infty$ limit introduces infinitesimal energy non-conservation ($\Delta E \sim \hbar\Gamma_0$), which is macroscopically negligible and shared by all collapse theories.
 
----
+
 
 ## 9. License and Citation
 
@@ -141,4 +141,5 @@ This project is licensed under the **MIT License**. See `LICENSE` for details.
 If you use this code or theory, please cite:
 
 Chung, Renny. "Decoherence-Triggered Instant Pruning: A Simulation-Efficient Objective Collapse Model." 2025.
+
 
