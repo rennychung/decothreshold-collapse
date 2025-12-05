@@ -1,7 +1,9 @@
 # Decoherence-Triggered Instant Pruning (DTC): A Simulation-Efficient Objective Collapse Model
 
 **Author:** Renny Chung
+
 **Contact:** renny.chung.physics@gmail.com
+
 **Canonical Status:** This document is the definitive reference for Renny’s DTC theory.
 
 ---
@@ -139,3 +141,4 @@ This project is licensed under the **MIT License**. See `LICENSE` for details.
 If you use this code or theory, please cite:
 
 Chung, Renny. "Decoherence-Triggered Instant Pruning: A Simulation-Efficient Objective Collapse Model." 2025.
+
