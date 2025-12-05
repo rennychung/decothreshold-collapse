@@ -154,14 +154,17 @@ Chung, Renny. "Decoherence-Triggered Instant Pruning: A Simulation-Efficient Obj
 
 - S. L. Adler, "Why Decoherence has not Solved the Measurement Problem: A Response to P. W. Anderson," arXiv:quant-ph/0112095 (2001).
 - G. Bacciagaluppi, "Collapse Theories," in *The Stanford Encyclopedia of Philosophy*, edited by E. N. Zalta and U. Nodelman (2024).
-- T. Baumgratz, M. Cramer, and M. B. Plenio, "Quantifying Coherence," Phys. Rev. Lett. **113**, 140401 (2014); arXiv:1311.0275 [quant-ph] (2013).
+- T. Baumgratz, M. Cramer, and M. B. Plenio, "Quantifying Coherence," Phys. Rev. Lett. 113, 140401 (2014); arXiv:1311.0275 [quant-ph] (2013).
 - D. Burgarth, P. Facchi, G. Gramegna, and S. Pascazio, "The Gorini-Kossakowski-Sudarshan-Lindblad generation theorem, and a generalization to non-stationary evolutions," arXiv:2507.11766 [quant-ph] (2025).
 - R. Fitzpatrick, "2.6: The Born Rule," in *Introductory Quantum Mechanics* (Physics LibreTexts, 2022).
+- Giordano, D., Altamura, A., Vinante, A., & Carlesso, M. (2025). Improved bounds on collapse models from rotational noise of LISA Pathfinder. *Physical Review A*, 111, L020203. (Preprint: arXiv:2501.08971).
 - P. Kok, "6.1: The Lindblad Equation," in *Advanced Quantum Mechanics* (Physics LibreTexts, 2023).
 - T. J. Osborne, "Full- and low-rank exponential Euler integrators for the Lindblad equation," arXiv:2408.13601 [quant-ph] (2024).
 - G. 't Hooft, "On Superdeterministic Rejections of Settings Independence," arXiv:2008.00631 [quant-ph] (2020).
 - A. Valentini, "Breaking quantum linearity: constraints from human perception and cosmological implications," arXiv:1011.3767 [quant-ph] (2010).
-- W. H. Zurek, "Decoherence, einselection, and the quantum origins of the classical," Rev. Mod. Phys. **75**, 715 (2003); arXiv:quant-ph/0105127.
+- Vinante, A., Bahrami, M., Bassi, A., Usenko, O., Wijts, G., & Oosterkamp, T. H. (2016). Upper bounds on spontaneous wave-function collapse models using millikelvin-cooled nanocantilevers. *Physical Review Letters*, 116(9), 090402.
+- W. H. Zurek, "Decoherence, einselection, and the quantum origins of the classical," Rev. Mod. Phys. 75, 715 (2003); arXiv:quant-ph/0105127.
+
 
 
 
