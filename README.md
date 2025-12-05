@@ -1,2 +1,113 @@
-# decothreshold-collapse
-Simulation code and analysis for "Decoherence-Triggered Instant Pruning": a new, objective, and simulation-efficient quantum collapse model. Includes reproducible trajectory and density-matrix demonstrations of Decoherence-Triggered Collapse Master Equation
+# Objective Pruning Collapse Theory
+
+This repository contains the simulation code for a novel objective collapse theory, based on a **modified quantum master equation** that introduces an irreversibility threshold to trigger the spontaneous physical deletion of non-actualized quantum branches.
+
+
+
+## 1. The Modified Master Equation
+
+The density operator $\rho$ evolves according to the following equation, which adds the **objective pruning collapse term** to the standard unitary and Lindblad evolution:
+
+$$
+\frac{d\rho}{dt} = -i[H,\rho] + \sum_k \gamma_k \mathcal{D}[L_k]\rho + \Gamma_{\text{trigger}}(\rho) \sum_n \mathcal{D}[P_n]\rho
+$$
+
+where:
+- $H$ is the system Hamiltonian.
+- $\mathcal{D}[A]\rho \equiv A\rho A^\dagger - \frac{1}{2}\{A^\dagger A, \rho\}$ is the Lindblad superoperator (note the curly braces for the anticommutator).
+- $\{L_k\}$ are the standard Lindblad operators describing environmental dissipation and decoherence with rates $\gamma_k$.
+- $\{P_n\}$ are orthogonal projection operators onto the pointer basis $\{|n\rangle\}$, with $\sum_n P_n = \mathbf{1}$.
+
+
+
+## 2. The Coherence Measure and Trigger Rate
+
+The pruning term activates only when the coherence in the pointer basis falls below a critical irreversibility threshold, $C_{\text{th}}$.
+
+### Trigger Rate
+
+The ideal trigger rate, $\Gamma_{\text{trigger}}(\rho)$, is a sharp, Heaviside switch:
+
+$$
+\Gamma_{\text{trigger}}(\rho) = \Gamma_0 \cdot \Theta\bigl(C_{\text{th}} - C(\rho)\bigr)
+$$
+
+with the maximum pruning rate $\Gamma_0 \to \infty$ (ideal sharp pruning).
+
+For smooth numerical approximations, the formula uses a logistic function where $\kappa \to \infty$.
+
+### Coherence Measure $C(\rho)$
+
+The function $C(\rho)$ is the coherence measure used in the trigger:
+
+**1. Conceptual Coherence (L¹-Norm, Exact Measure):**
+
+    C_l1(ρ) ≡ Σ_{n ≠ m} |⟨n|ρ|m⟩|   (l¹-norm of off-diagonal elements)
+
+**2. Operational Trigger Function (Purity Proxy):**
+
+    C(ρ) ≡ sqrt[1 − Tr(ρ²)]   (purity proxy, monotonic with l¹ in the decoherence-dominated regime)
+
+(purity proxy, monotonic with $l^1$ in the decoherence-dominated regime)
+
+In realistic measurement processes, environmental decoherence ensures $C_{l1}(\rho)$ and the purity proxy vanish simultaneously (up to negligible corrections), allowing the purity proxy to be the preferred operational definition.
+
+
+
+## 3. Fundamental Parameters of the Theory
+
+| Parameter    | Physical Meaning                                    | Realistic Value             | Renny’s Choice (Ideal)          |
+| :----------- | :-------------------------------------------------- | :-------------------------- | :------------------------------ |
+| $\Gamma_0$   | Maximum pruning rate (collapse speed once triggered)| $\ge 10^{20} \text{ s}^{-1}$ (instantaneous) | $\infty$ (ideal sharp switch)   |
+| $C_\text{th}$| Irreversibility threshold                           | $\sim 10^{-20} \text{ -- } 10^{-15}$ | $10^{-20}$                      |
+| $\kappa$     | Steepness of the switch (smooth approximation)      | $> 10^{20}$                 | $\infty$ (ideal sharp switch)   |
+
+
+
+## 4. Key Theorems and Consequences
+
+| Theorem              | Mechanism and Outcome                                                                                           | Significance                                                                                   |
+| :------------------- | :------------------------------------------------------------------------------------------------------------- | :--------------------------------------------------------------------------------------------- |
+| **Microscopic Systems**     | For isolated systems ($\gamma_k \approx 0$), $C(\rho)$ never drops below $C_{\text{th}}$ so $\Gamma_{\text{trigger}} = 0$ forever. | Perfectly unitary evolution and zero collapse noise, fully recovering standard QM in the microscopic regime (stronger than GRW/CSL). |
+| **Macroscopic Measurement** | Strong decoherence causes $C(\rho) \to 0$ in $< 10^{-15} \text{ s}$ so $\Gamma_{\text{trigger}} \to \infty$.                     | One definite outcome is selected, and other branches are physically deleted immediately after irreversibility.                        |
+| **Born Rule**               | Probability of jumping to state $n$ is $\mathrm{Tr}(P_n \rho P_n)$ immediately before trigger.            | The standard probability rule is recovered because the system is already diagonalized in the pointer basis by environmental decoherence. |
+| **No Superluminal Signaling** | Collapse only occurs *after* branches are irreversibly separated (orthogonality is established).         | Guarantees consistency with relativity and energy conservation.                                                                        |
+| **Simulation Efficiency**   | The threshold provides an optimal lazy-evaluation strategy, allowing a simulator to free the memory of all non-actualized branches the instant $C(\rho) < C_{\text{th}}$. | A direct application for resource-bounded simulation of quantum systems.                                                              |
+
+
+
+## 5. Code & Usage
+
+- **Requirements:** Python 3, NumPy, Matplotlib
+
+## 6. Figures
+Double-slit quantum trajectories (objective bifurcation)
+<img width="1200" height="700" alt="double_slit_trajectories" src="https://github.com/user-attachments/assets/a77478ea-dbb8-489a-8c78-f04152e8482b" />
+
+Density matrix coherence collapse (vertical, tail-free)
+<img width="1000" height="600" alt="density_matrix_coherence" src="https://github.com/user-attachments/assets/f3b22eed-da34-40d9-8bb9-6cb0317091db" />
+
+## 7. Philosophical Summary
+Objective collapse, in this framework, is not driven by consciousness, gravitational mass, or spontaneous stochastic fluctuations.
+Rather, collapse is triggered exclusively by the information-theoretic criterion that all alternative quantum outcomes—except the actualized one—have become irreversibly inaccessible to the entire future universe.
+That is, collapse is a consequence of the objective, physical loss of coherence between branches. Specifically, when the off-diagonal elements of the system’s density matrix in the pointer basis have been suppressed below any threshold recoverable by physical processes—even in principle—the deletion of non-actualized branches is both theoretically justified and operationally necessary.
+On this view, the wave function does not represent a multitude of equally real worlds. Instead, it encodes a single world: one that comprises both the actual and the possible, up until the point when irreversibility renders the alternatives no longer physically meaningful.
+
+## 8. License
+This project is licensed under the MIT License.
+See LICENSE for details.
+
+## 9. Citation
+If you use this code or theory, please cite:
+
+Renny Chung, "Decoherence-Triggered Instant Pruning: A Simulation-Efficient Objective Collapse Model" (2025).
+
+## 10. Contact
+Questions, suggestions, or feedback?
+Open an issue or email renny.chung.physics@gmail.com.
+
+## 11. Topics
+quantum-physics • decoherence • objective-collapse • open-quantum-systems • simulation • python • reproducible-research
+
+This repository is intended as the canonical reference for Renny’s DTC theory. The model is presented in its complete form, and no additional ingredients are proposed.
+
