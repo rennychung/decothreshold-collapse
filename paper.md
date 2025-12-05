@@ -143,3 +143,4 @@ If you use this code or theory, please cite:
 Chung, Renny. "Decoherence-Triggered Instant Pruning: A Simulation-Efficient Objective Collapse Model." 2025.
 
 
+
