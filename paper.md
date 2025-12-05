@@ -137,10 +137,43 @@ Like all existing objective-collapse models (GRW, CSL, Diósi–Penrose), DTC is
 
 This project is licensed under the **MIT License**. See `LICENSE` for details.
 
+## 10. References
+
+- S. L. Adler, "Why Decoherence has not Solved the Measurement Problem: A Response to P. W. Anderson," arXiv:quant-ph/0112095 (2001).  
+  https://arxiv.org/abs/quant-ph/0112095
+
+- G. Bacciagaluppi, "Collapse Theories," in *The Stanford Encyclopedia of Philosophy*, edited by E. N. Zalta and U. Nodelman (2024).  
+  https://plato.stanford.edu/entries/qm-collapse/
+
+- T. Baumgratz, M. Cramer, and M. B. Plenio, "Quantifying Coherence," Phys. Rev. Lett. **113**, 140401 (2014); arXiv:1311.0275 [quant-ph] (2013).  
+  https://arxiv.org/abs/1311.0275
+
+- D. Burgarth, P. Facchi, G. Gramegna, and S. Pascazio, "The Gorini-Kossakowski-Sudarshan-Lindblad generation theorem, and a generalization to non-stationary evolutions," arXiv:2507.11766 [quant-ph] (2025).  
+  https://arxiv.org/abs/2507.11766
+
+- R. Fitzpatrick, "2.6: The Born Rule," in *Introductory Quantum Mechanics* (Physics LibreTexts, 2022).  
+  https://phys.libretexts.org/Bookshelves/Quantum_Mechanics/Introductory_Quantum_Mechanics_(Fitzpatrick)/02:_The_Postulates_of_Quantum_Mechanics/2.06:_The_Born_Rule
+
+- P. Kok, "6.1: The Lindblad Equation," in *Advanced Quantum Mechanics* (Physics LibreTexts, 2023).  
+  https://phys.libretexts.org/Bookshelves/Quantum_Mechanics/Advanced_Quantum_Mechanics_(Kok)/06:_Evolution_of_Open_Quantum_Systems/6.01:_The_Lindblad_Equation
+
+- T. J. Osborne, "Full- and low-rank exponential Euler integrators for the Lindblad equation," arXiv:2408.13601 [quant-ph] (2024).  
+  https://arxiv.org/abs/2408.13601
+
+- G. 't Hooft, "On Superdeterministic Rejections of Settings Independence," arXiv:2008.00631 [quant-ph] (2020).  
+  https://arxiv.org/abs/2008.00631
+
+- A. Valentini, "Breaking quantum linearity: constraints from human perception and cosmological implications," arXiv:1011.3767 [quant-ph] (2010).  
+  https://arxiv.org/abs/1011.3767
+
+- W. H. Zurek, "Decoherence, einselection, and the quantum origins of the classical," Rev. Mod. Phys. **75**, 715 (2003); arXiv:quant-ph/0105127.  
+  https://arxiv.org/abs/quant-ph/0105127
+
 ### Citation
 If you use this code or theory, please cite:
 
 Chung, Renny. "Decoherence-Triggered Instant Pruning: A Simulation-Efficient Objective Collapse Model." 2025.
+
 
 
 
