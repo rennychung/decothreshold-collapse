@@ -102,7 +102,7 @@ The DTC theory relies on the irreversibility threshold ($C_{\text{th}}$) and the
 
 ![Plot showing the theoretical boundaries and required constraints on the C_th and Gamma_0 parameter space for the DTC theory.](figures/figure3_parameter_space.png)
 
-
+### Figure 4: 
 ## 7. Philosophical Summary
 Objective collapse, in this framework, is not driven by consciousness, gravitational mass, or spontaneous stochastic fluctuations.
 Rather, collapse is triggered exclusively by the information-theoretic criterion that all alternative quantum outcomes—except the actualized one—have become irreversibly inaccessible to the entire future universe.
