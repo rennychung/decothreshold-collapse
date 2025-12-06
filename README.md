@@ -1,6 +1,6 @@
 ### DRAFT Models/Scripts/README/PAPERs need fix/polishing
 
-# Objective Pruning Collapse Theory
+# Decoherence-Triggered Collapse (DTC)
 
 This repository contains the simulation code for a novel objective collapse theory, based on a **modified quantum master equation** that introduces an irreversibility threshold to trigger the spontaneous physical deletion of non-actualized quantum branches.
 
@@ -8,18 +8,27 @@ This repository contains the simulation code for a novel objective collapse theo
 
 ## 1. The Modified Master Equation
 
+EDIT
 The density operator $\rho$ evolves according to the following equation, which adds the **objective pruning collapse term** to the standard unitary and Lindblad evolution:
 
 $$
 \frac{d\rho}{dt} = -i[H,\rho] + \sum_k \gamma_k \mathcal{D}[L_k]\rho + \Gamma_{\text{trigger}}(\rho) \sum_n \mathcal{D}[P_n]\rho
 $$
 
+where the Lindblad dissipator is defined in standard form as
+
+$$
+\mathcal{D}[A]\rho \equiv A\rho A^\dagger - \frac{1}{2}\{A^\dagger A,\rho\}
+$$
+
 where:
 - $H$ is the system Hamiltonian.
-- $\mathcal{D}[A]\rho \equiv A\rho A^\dagger - \frac{1}{2}\{A^\dagger A, \rho\}$ is the Lindblad superoperator (note the curly braces for the anticommutator).
-- $\{L_k\}$ are the standard Lindblad operators describing environmental dissipation and decoherence with rates $\gamma_k$.
-- $\{P_n\}$ are orthogonal projection operators onto the pointer basis $\{|n\rangle\}$, with $\sum_n P_n = \mathbf{1}$.
-
+- $\{L_k\}$ are the usual Lindblad operators describing environmental decoherence, with rates $\gamma_k \ge 0$.
+- $\{P_n = |n\rangle\langle n|\}$ are orthogonal projectors onto the **pointer basis** selected by the environment, satisfying $\sum_n P_n = \mathbf{1}$.
+- $C(\rho) = \sum_{i \neq j} |\rho_{ij}|$ (or equivalent $l_1$-norm) measures total off-diagonal coherence.
+- $C_{\rm th} \approx 10^{-20}$ is the **irreversibility threshold** derived from quantum Darwinism (Zurek, 2003).
+- $\Theta(x)$ is the Heaviside step function.
+- $\Gamma_0 \to \infty$ (or $\Gamma_0 \gtrsim 10^{25}~\text{s}^{-1}$ in finite-rate numerical implementations) ensures **instantaneous pruning** the moment coherence falls below $C_{\rm th}$.
 
 
 ## 2. The Coherence Measure and Trigger Rate
