@@ -1,3 +1,5 @@
+### DRAFT Models/Scripts/README/PAPERs need fix/polishing
+
 # Objective Pruning Collapse Theory
 
 This repository contains the simulation code for a novel objective collapse theory, based on a **modified quantum master equation** that introduces an irreversibility threshold to trigger the spontaneous physical deletion of non-actualized quantum branches.
