@@ -7,11 +7,22 @@ Cth    = np.logspace(-25, -10, 500)
 G, C = np.meshgrid(Gamma0, Cth)
 
 plt.figure(figsize=(6.4, 4.8))
+
+# 1. Plot the Allowed Region (Green)
+# This represents the "safe" zone compatible with current physics.
 plt.fill_between(Gamma0, 1e-25, 1e-8, color='#90EE90', alpha=0.7, label='Allowed region (2025)')
+
+# 2. Plot the Crosshairs (The Chosen Parameters)
 plt.axvline(1e20, color='red', ls='--', lw=2, label=r'Chosen $\Gamma_0 = 10^{20}$ s$^{-1}$')
 plt.axhline(1e-20, color='darkorange', ls='--', lw=2, label=r'Chosen $C_{\rm th} = 10^{-20}$')
+
+# 3. Setup Axes
 plt.loglog()
-plt.xlim(1e16, 1e30); plt.ylim(1e-25, 1e-9)
+plt.xlim(1e16, 1e30)
+
+# CHANGE HERE: Increased upper limit to 1e-5 to show the "Forbidden" white space above.
+plt.ylim(1e-25, 1e-5) 
+
 plt.xlabel(r'Pruning rate $\Gamma_0$ [s$^{-1}$]')
 plt.ylabel(r'Coherence threshold $C_{\rm th}$')
 plt.title('DTIP parameter space vs. 2025 experimental bounds')
