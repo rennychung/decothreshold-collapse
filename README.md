@@ -178,12 +178,18 @@ The DTC theory relies on the irreversibility threshold ($C_{\text{th}}$) and the
 
 ![Plot showing the theoretical boundaries and required constraints on the C_th and Gamma_0 parameter space for the DTC theory.](figures/figure3_parameter_space.png)
 
-### Figure 4: 
+### Figure 4: coherence_decay_DTC
+### Figure 5: dtc_cat_test
+### Figure 6: lazarus_test
+### Figure 7: dtc_lisa
+
 ## 7. Philosophical Summary
-Objective collapse, in this framework, is not driven by consciousness, gravitational mass, or spontaneous stochastic fluctuations.
-Rather, collapse is triggered exclusively by the information-theoretic criterion that all alternative quantum outcomes—except the actualized one—have become irreversibly inaccessible to the entire future universe.
-That is, collapse is a consequence of the objective, physical loss of coherence between branches. Specifically, when the off-diagonal elements of the system’s density matrix in the pointer basis have been suppressed below any threshold recoverable by physical processes—even in principle—the deletion of non-actualized branches is both theoretically justified and operationally necessary.
-On this view, the wave function does not represent a multitude of equally real worlds. Instead, it encodes a single world: one that comprises both the actual and the possible, up until the point when irreversibility renders the alternatives no longer physically meaningful.
+The Decoherence-Triggered Collapse (DTC) model does not invoke consciousness, gravitational effects, or additional stochastic fields as the origin of wave-function collapse.  
+Collapse arises exclusively from the physical process of environment-induced decoherence itself.
+
+When off-diagonal coherence in the pointer basis is suppressed below the irreversibility threshold $C_{\rm irr} \approx 10^{-20}$ — a scale derived from the scattering rates of macroscopic objects with environmental photons and particles (Joos & Zeh, 1985; Zurek, 2003) — the non-actualized branches become inaccessible to all future physical interactions, even in principle. At that point the theory activates an infinitely sharp pruning term that instantaneously projects the state onto the pointer basis selected by the environment.
+
+Consequently, the quantum state never describes a multitude of co-existing, equally real parallel worlds. Prior to the threshold, off-diagonal terms encode physically accessible superpositions; once the threshold is crossed, those terms lose all observable consequences and are legitimately removed from the description. The wave function thus represents a single ontological world that temporarily carries latent possibilities until environmental entanglement renders the alternatives irreversibly unrecoverable. Collapse is therefore not an extra postulate grafted onto quantum mechanics, but an objective dynamical consequence of the same irreversible decoherence process that already explains the quantum-to-classical transition.
 
 ## 8. License
 This project is licensed under the MIT License.
