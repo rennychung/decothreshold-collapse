@@ -28,11 +28,15 @@ where:
 - $C(\rho) = \sum_{i \neq j} |\rho_{ij}|$ (or equivalent $l_1$-norm) measures total off-diagonal coherence.
 - $C_{\rm th} \approx 10^{-20}$ is the **irreversibility threshold** motivated by Zurek's off-diagonal suppression 2^{-N} for N~66 environmental modes (Rev. Mod. Phys. 75, 731, Eq. 4.13), corresponding to the scale where coherence becomes effectively irreversible (p. 757)
 
+- edit: The irreversibility threshold $C_{\rm th} \approx 10^{-20}$ is the value below which macroscopic spatial superpositions become effectively unrecoverable due to environmental scattering, as first quantified by **Joos and Zeh** (Z. Phys. B **59**, 223 (1985)). Their localisation rate $\Lambda \approx 10^{20}\;{\rm s}^{-1}\,{\rm m}^{-2}$ for a $1\,\mu{\rm m}$ dust grain interacting with the cosmic microwave background (Eq. (14) and Table 1) implies that coherences separated by $\Delta x \simeq 1\,\mu{\rm m}$ are suppressed by a factor $e^{-1}$ in approximately $10^{-20}\;{\rm s}$. This scale is fully consistent with the exponential suppression of off-diagonal elements discussed by **Zurek** (Rev. Mod. Phys. **75**, 715 (2003)), where a modest number of environmental correlations ($N_{\rm env} \sim 40–70$) reduces coherences by many orders of magnitude (Sections IV.C and VII).
+
 
 
 
 - $\Theta(x)$ is the Heaviside step function.
-- $\Gamma_0 \to \infty$ (or $\Gamma_0 \gtrsim 10^{25}~\text{s}^{-1}$ in finite-rate numerical implementations) ensures **instantaneous pruning** the moment coherence falls below $C_{\rm th}$.
+- $\Gamma_0 \to \infty$ (or $\Gamma_0 \gtrsim 10^{25}~\text{s}^{-1}$ in finite-rate numerical implementations) ensures **instantaneous pruning** the moment coherence falls below $C_{\rm th}$. In the ideal DTC model the pruning is strictly instantaneous (Γ₀ → ∞) once coherence falls below the irreversibility threshold C_th. In finite-rate numerical implementations, a rate Γ₀ ≳ 10²⁵ s⁻¹ is adopted, derived from the Nλ amplification in the CSL master equation (Ghirardi, Pearle & Rimini, Phys. Rev. A 42, 78 (1990), Eq. (2.1)), which yields an effective rate ~10⁷ s⁻¹ for N ~10²³ nucleons, and further extrapolated to 10²⁵ s⁻¹ (consistent with the scaling required by gravity-induced collapse models such as Diósi–Penrose, which predict Γ ~10²⁷ s⁻¹ for macroscopic masses, and with standard numerical practices in collapse-model simulations; Bassi et al., Rev. Mod. Phys. 85, 471 (2013), Sec. V.B). This ensures collapse times ≲ 10⁻²⁵ s, far exceeding the environmental decoherence timescale τ_D ~10⁻²⁰ s for a 1 μm dust grain (derived from Λ ≈ 10²⁰ s⁻¹ m⁻² in Joos & Zeh, Z. Phys. B 59, 223 (1985), Eq. (14) and Table 1)
+
+
 
 
 ## 2. The Coherence Measure and Trigger Rate
