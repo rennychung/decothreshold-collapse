@@ -203,20 +203,35 @@ This leads to sharp empirical distinctions from stochastic collapse models such 
 
 Ongoing non-interferometric tests (cantilever experiments, ultracold atoms, space-based detectors) and near-term matter-wave interferometry with massive molecules or nanoparticles can directly discriminate DTC’s environment-dependent, threshold-triggered collapse from CSL’s intrinsic, continuous noise (see reviews in Carlesso & Bassi, Phys. Rep. **1005**, 1 (2023); Donadi & Bassi, Phys. Rep. **1053**, 1 (2024)). Because DTC leverages the same irreversible decoherence rates already present in standard quantum mechanics, it remains consistent with all experiments to date while offering a falsifiable prediction: collapse events are strictly correlated with the moment environmental entanglement renders alternative outcomes physically unrecoverable.
 
-## 8. License
+## 9. Current Limitations and Open Questions
+
+While the DTC model offers a parameter-free, environment-triggered collapse mechanism consistent with all existing experiments, several theoretical and practical limitations remain:
+
+- **Relativistic generalisation** — The present formulation uses a non-relativistic Lindblad master equation with an explicit preferred pointer basis selected by the environment. A fully covariant version that respects locality and avoids superluminal signalling in multi-particle systems has not yet been constructed (cf. ongoing challenges for all objective collapse theories, Tumulka, 2023; Bassi et al., 2023).
+
+- **Exact definition of the pointer basis in interacting field theories** — In realistic many-body systems the instantaneous eigenbasis of the interaction Hamiltonian is time-dependent and non-trivial. Numerical simulations in the repository use simplified or pre-defined pointer bases; a systematic, basis-independent formulation of the trigger remains under development.
+
+- **Finite-rate numerical artefacts** — Ideal DTC requires $\Gamma_0 \to \infty$ and a perfect Heaviside switch. Real simulations use large but finite $\Gamma_0 \gtrsim 10^{25}\;{\rm s}^{-1}$ and a steep logistic function. These approximations are standard in the collapse-model literature (Bassi et al., Rev. Mod. Phys. **85**, 471 (2013)) and do not affect macroscopic predictions, but they slightly blur the exact moment of pruning.
+
+- **Lack of direct experimental discrimination to date** — Because DTC activates only after environmental decoherence has already made branches irreversibly inaccessible, current matter-wave interferometers and optomechanical tests (which operate well above $C_{\rm irr}$) cannot yet distinguish DTC from standard quantum mechanics plus ordinary decoherence. Future experiments must probe the precise dynamics at or below the $10^{-20}$ coherence level (e.g. space-based molecular interferometry or kilometre-scale baselines).
+
+- **Energy non-conservation at the instant of pruning** — The ideal infinite-rate limit violates energy conservation by an arbitrarily small amount for macroscopic objects (consistent with the uncertainty principle over $\sim 10^{-25}\;{\rm s}$). Regularised finite-rate versions restore strict conservation at the cost of a brief residual tail, exactly as in CSL and GRW implementations.
+
+
+## 10. License
 This project is licensed under the MIT License.
 See LICENSE for details.
 
-## 9. Citation
+## 11. Citation
 If you use this code or theory, please cite:
 
 Renny Chung, "Decoherence-Triggered Instant Pruning: A Simulation-Efficient Objective Collapse Model" (2025).
 
-## 10. Contact
+## 12. Contact
 Questions, suggestions, or feedback?
 Open an issue or email renny.chung.physics@gmail.com.
 
-## 11. Topics
+## 13. Topics
 quantum-physics • decoherence • objective-collapse • open-quantum-systems • simulation • python • reproducible-research
 
 This repository is intended as the canonical reference for Renny’s DTC theory. The model is presented in its complete form, and no additional ingredients are proposed.
