@@ -26,7 +26,11 @@ where:
 - $\{L_k\}$ are the usual Lindblad operators describing environmental decoherence, with rates $\gamma_k \ge 0$.
 - $\{P_n = |n\rangle\langle n|\}$ are orthogonal projectors onto the **pointer basis** selected by the environment, satisfying $\sum_n P_n = \mathbf{1}$.
 - $C(\rho) = \sum_{i \neq j} |\rho_{ij}|$ (or equivalent $l_1$-norm) measures total off-diagonal coherence.
-- $C_{\rm th} \approx 10^{-20}$ is the **irreversibility threshold** derived from quantum Darwinism (Zurek, 2003).
+- $C_{\rm th} \approx 10^{-20}$ is the **irreversibility threshold** motivated by Zurek's off-diagonal suppression 2^{-N} for N~66 environmental modes (Rev. Mod. Phys. 75, 731, Eq. 4.13), corresponding to the scale where coherence becomes effectively irreversible (p. 757)
+
+
+
+
 - $\Theta(x)$ is the Heaviside step function.
 - $\Gamma_0 \to \infty$ (or $\Gamma_0 \gtrsim 10^{25}~\text{s}^{-1}$ in finite-rate numerical implementations) ensures **instantaneous pruning** the moment coherence falls below $C_{\rm th}$.
 
