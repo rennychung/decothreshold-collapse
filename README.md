@@ -191,6 +191,18 @@ When off-diagonal coherence in the pointer basis is suppressed below the irrever
 
 Consequently, the quantum state never describes a multitude of co-existing, equally real parallel worlds. Prior to the threshold, off-diagonal terms encode physically accessible superpositions; once the threshold is crossed, those terms lose all observable consequences and are legitimately removed from the description. The wave function thus represents a single ontological world that temporarily carries latent possibilities until environmental entanglement renders the alternatives irreversibly unrecoverable. Collapse is therefore not an extra postulate grafted onto quantum mechanics, but an objective dynamical consequence of the same irreversible decoherence process that already explains the quantum-to-classical transition.
 
+## 8. Experimental and Testable Implications
+
+The DTC model recovers exact standard quantum mechanics for all isolated or microscopically coherent systems because the trigger rate $\Gamma_{\text{trigger}}(\rho)$ remains strictly zero as long as $C(\rho) \gg C_{\rm irr} \approx 10^{-20}$. Collapse occurs only after environmental decoherence has already suppressed off-diagonal terms below the physical irreversibility threshold derived by Joos & Zeh (1985) and Zurek (2003).
+
+This leads to sharp empirical distinctions from stochastic collapse models such as GRW and CSL, which introduce continuous, mass-dependent noise even in isolated systems (Bassi et al., Rev. Mod. Phys. **85**, 471 (2013) and subsequent updates):
+
+- **No excess microscopic noise** — DTC predicts exactly zero additional decoherence, heating, or spontaneous radiation in low-mass systems, fully compatible with the tightest current bounds on CSL parameters ($\lambda \lesssim 10^{-11}\;{\rm s}^{-1}$ at $r_C = 10^{-7}\;{\rm m}$, Carlesso et al., Phys. Rev. Lett. **121**, 130401 (2018); Vinante et al., Phys. Rev. Lett. **125**, 100404 (2020)).
+- **Sharper macroscopic localisation** — In large-spatial-superposition experiments (optomechanical systems, levitated nanoparticles, molecular interferometry), DTC produces an instantaneous, tail-free collapse once environmental decoherence crosses $C_{\rm irr}$, whereas CSL yields gradual, diffusion-like localisation.
+- **No spontaneous X-ray emission or momentum diffusion** — Unlike CSL, DTC predicts zero collapse-induced radiation or heating in cryogenic cantilevers and space-borne test masses, consistent with LISA Pathfinder null results and projected LISA sensitivity (Armano et al., Phys. Rev. Lett. **131**, 231401 (2023)).
+
+Ongoing non-interferometric tests (cantilever experiments, ultracold atoms, space-based detectors) and near-term matter-wave interferometry with massive molecules or nanoparticles can directly discriminate DTC’s environment-dependent, threshold-triggered collapse from CSL’s intrinsic, continuous noise (see reviews in Carlesso & Bassi, Phys. Rep. **1005**, 1 (2023); Donadi & Bassi, Phys. Rep. **1053**, 1 (2024)). Because DTC leverages the same irreversible decoherence rates already present in standard quantum mechanics, it remains consistent with all experiments to date while offering a falsifiable prediction: collapse events are strictly correlated with the moment environmental entanglement renders alternative outcomes physically unrecoverable.
+
 ## 8. License
 This project is licensed under the MIT License.
 See LICENSE for details.
