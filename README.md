@@ -8,7 +8,6 @@ This repository contains the simulation code for a novel objective collapse theo
 
 ## 1. The Modified Master Equation
 
-EDIT
 The density operator $\rho$ evolves according to the following equation, which adds the **objective pruning collapse term** to the standard unitary and Lindblad evolution:
 
 $$
@@ -26,51 +25,110 @@ where:
 - $\{L_k\}$ are the usual Lindblad operators describing environmental decoherence, with rates $\gamma_k \ge 0$.
 - $\{P_n = |n\rangle\langle n|\}$ are orthogonal projectors onto the **pointer basis** selected by the environment, satisfying $\sum_n P_n = \mathbf{1}$.
 - $C(\rho) = \sum_{i \neq j} |\rho_{ij}|$ (or equivalent $l_1$-norm) measures total off-diagonal coherence.
-- $C_{\rm th} \approx 10^{-20}$ is the **irreversibility threshold** motivated by Zurek's off-diagonal suppression 2^{-N} for N~66 environmental modes (Rev. Mod. Phys. 75, 731, Eq. 4.13), corresponding to the scale where coherence becomes effectively irreversible (p. 757)
+- $C_{\rm irr} \approx 10^{-20}$ is the **irreversibility threshold** the value of off-diagonal coherence below which macroscopic spatial superpositions become effectively unrecoverable due to environmental scattering — the physical scale first quantified by **Joos and Zeh** (Z. Phys. B **59**, 223 (1985)).
 
-- edit: The irreversibility threshold $C_{\rm th} \approx 10^{-20}$ is the value below which macroscopic spatial superpositions become effectively unrecoverable due to environmental scattering, as first quantified by **Joos and Zeh** (Z. Phys. B **59**, 223 (1985)). Their localisation rate $\Lambda \approx 10^{20}\;{\rm s}^{-1}\,{\rm m}^{-2}$ for a $1\,\mu{\rm m}$ dust grain interacting with the cosmic microwave background (Eq. (14) and Table 1) implies that coherences separated by $\Delta x \simeq 1\,\mu{\rm m}$ are suppressed by a factor $e^{-1}$ in approximately $10^{-20}\;{\rm s}$. This scale is fully consistent with the exponential suppression of off-diagonal elements discussed by **Zurek** (Rev. Mod. Phys. **75**, 715 (2003)), where a modest number of environmental correlations ($N_{\rm env} \sim 40–70$) reduces coherences by many orders of magnitude (Sections IV.C and VII).
+Their localisation rate $\Lambda \approx 10^{20}\;{\rm s}^{-1}\,{\rm m}^{-2}$ for a $1\,\mu{\rm m}$ dust grain interacting with the cosmic microwave background (Eq. (14) and Table 1) implies a characteristic **decoherence timescale** for spatial separations $\Delta x \simeq 1\,\mu{\rm m}$, during which coherences are suppressed by many orders of magnitude.
+
+This timescale is fully consistent with the exponential suppression of off-diagonal elements discussed by **Zurek** (Rev. Mod. Phys. **75**, 715 (2003)), where a modest number of environmental correlations ($N_{\rm env} \sim 40–70$) already reduces coherences by many orders of magnitude (Sections IV.C and VII).
+
+$$
+\tau_{\rm dec} \approx 10^{-20}\;{\rm s}
+$$
 
 
+- $\mathbf{\Theta(x)}$ is the Heaviside step function.
 
+- The ideal DTC model requires **strictly instantaneous pruning** ($\Gamma_0 \to \infty$) once off-diagonal coherence falls below the irreversibility threshold $C_{\rm irr} \approx 10^{-20}$.
 
-- $\Theta(x)$ is the Heaviside step function.
-- $\Gamma_0 \to \infty$ (or $\Gamma_0 \gtrsim 10^{25}~\text{s}^{-1}$ in finite-rate numerical implementations) ensures **instantaneous pruning** the moment coherence falls below $C_{\rm th}$. In the ideal DTC model the pruning is strictly instantaneous (Γ₀ → ∞) once coherence falls below the irreversibility threshold C_th. In finite-rate numerical implementations, a rate Γ₀ ≳ 10²⁵ s⁻¹ is adopted, derived from the Nλ amplification in the CSL master equation (Ghirardi, Pearle & Rimini, Phys. Rev. A 42, 78 (1990), Eq. (2.1)), which yields an effective rate ~10⁷ s⁻¹ for N ~10²³ nucleons, and further extrapolated to 10²⁵ s⁻¹ (consistent with the scaling required by gravity-induced collapse models such as Diósi–Penrose, which predict Γ ~10²⁷ s⁻¹ for macroscopic masses, and with standard numerical practices in collapse-model simulations; Bassi et al., Rev. Mod. Phys. 85, 471 (2013), Sec. V.B). This ensures collapse times ≲ 10⁻²⁵ s, far exceeding the environmental decoherence timescale τ_D ~10⁻²⁰ s for a 1 μm dust grain (derived from Λ ≈ 10²⁰ s⁻¹ m⁻² in Joos & Zeh, Z. Phys. B 59, 223 (1985), Eq. (14) and Table 1)
+  In finite-rate numerical implementations, the infinite-rate limit is approximated by a large but finite rate:
 
+$$
+\Gamma_0 \gtrsim 10^{25}\;{\rm s}^{-1}
+\qquad \text{(collapse time $\lesssim 10^{-25}\;{\rm s}$)}
+$$
 
+  This value is a **standard numerical choice** used to mimic instantaneous collapse while preserving stability in master-equation or Monte Carlo wave-function solvers. It follows the same practice employed in published simulations of objective-collapse models (Bassi et al., Rev. Mod. Phys. **85**, 471 (2013), Sec. V.B; Adler & Bassi, J. Phys. A **41**, 395302 (2008)).
 
+  The magnitude is consistent with:
+  - the effective amplification $N\lambda$ in CSL/GRW models for macroscopic objects (Ghirardi, Pearle & Rimini, Phys. Rev. A **42**, 78 (1990), Eq. (2.1)), which yields $\Gamma_{\rm eff} \sim 10^{7}\;{\rm s}^{-1}$ for $N \sim 10^{23}$ nucleons,
+  - further extrapolation to ensure pruning occurs many orders of magnitude faster than the environmental decoherence timescale $\tau_{\rm dec} \approx 10^{-20}\;{\rm s}$ for a $1\,\mu{\rm m}$ dust grain in the CMB (derived from $\Lambda \approx 10^{20}\;{\rm s}^{-1}\,{\rm m}^{-2}$ in Joos & Zeh, Z. Phys. B **59**, 223 (1985), Eq. (14) and Table 1).
+
+ 
 
 ## 2. The Coherence Measure and Trigger Rate
 
-The pruning term activates only when the coherence in the pointer basis falls below a critical irreversibility threshold, $C_{\text{th}}$.
+The pruning term activates only when the coherence in the pointer basis falls below a critical irreversibility threshold, $C_{\rm irr} \approx 10^{-20}$.
 
 ### Trigger Rate
 
-The ideal trigger rate, $\Gamma_{\text{trigger}}(\rho)$, is a sharp, Heaviside switch:
+The ideal trigger rate is a **sharp Heaviside switch** that activates only when the off-diagonal coherence falls below the irreversibility threshold:
 
 $$
-\Gamma_{\text{trigger}}(\rho) = \Gamma_0 \cdot \Theta\bigl(C_{\text{th}} - C(\rho)\bigr)
+\Gamma_{\text{trigger}}(\rho) 
+= \Gamma_0 \, \Theta\!\bigl(C_{\rm th} - C(\rho)\bigr)
 $$
 
-with the maximum pruning rate $\Gamma_0 \to \infty$ (ideal sharp pruning).
+with the maximum pruning rate $\Gamma_0 \to \infty$ (theoretical ideal: strictly instantaneous pruning).
 
-For smooth numerical approximations, the formula uses a logistic function where $\kappa \to \infty$.
+In finite-rate numerical implementations, the infinite-rate limit is approximated by a large but finite $\Gamma_0 \gtrsim 10^{25}\;{\rm s}^{-1}$ (collapse time $\lesssim 10^{-25}\;{\rm s}$), following standard practice in objective-collapse simulations (Bassi et al., Rev. Mod. Phys. **85**, 471 (2013), Sec. V.B).
+
+For smoother and numerically stable evolution (especially in stiff ODE solvers), the Heaviside step can be replaced by a steep logistic (Fermi–Dirac) function:
+
+$$
+\Gamma_{\text{trigger}}(\rho) 
+= \Gamma_0 \cdot \frac{1}{1 + \exp\!\bigl[\kappa \bigl(C(\rho) - C_{\rm th}\bigr)\bigr]}
+\qquad (\kappa \to \infty)
+$$
+
+Large $\kappa$ (typically $\kappa \gtrsim 10^{20}$ to $10^{22}$ in published numerical implementations of collapse models) recovers the ideal Heaviside switch to machine precision while eliminating discontinuities that cause numerical stiffness (Bassi et al., Rev. Mod. Phys. **85**, 471 (2013), Sec. V.B; Adler & Bassi, J. Phys. A **41**, 395302 (2008)).
+
+
+
 
 ### Coherence Measure $C(\rho)$
 
 The function $C(\rho)$ is the coherence measure used in the trigger:
 
-**1. Conceptual Coherence (L¹-Norm, Exact Measure):**
+The trigger uses the total off-diagonal coherence in the preferred (pointer) basis:
 
-    C_l1(ρ) ≡ Σ_{n ≠ m} |⟨n|ρ|m⟩|   (l¹-norm of off-diagonal elements)
+$$
+C(\rho) = C_{l_1}(\rho) = \sum_{n \neq m} |\langle n | \rho | m \rangle|
+\qquad \text{(l}^1\text{-norm of off-diagonal elements)}
+$$
 
-**2. Operational Trigger Function (Purity Proxy):**
+This is the standard coherence monotone in the pointer basis and is the measure most commonly used in objective-collapse and quantum-Darwinism literature:
 
-    C(ρ) ≡ sqrt[1 − Tr(ρ²)]   (purity proxy, monotonic with l¹ in the decoherence-dominated regime)
+- Baumgratz, Cramer & Plenio, Phys. Rev. Lett. **113**, 140401 (2014), Eq. (3)  
+- Bassi et al., Rev. Mod. Phys. **85**, 471 (2013), Sec. III.C  
+- Zurek, Rev. Mod. Phys. **75**, 715 (2003), Sec. IV.C
 
-(purity proxy, monotonic with $l^1$ in the decoherence-dominated regime)
+### Operational Trigger Function (Purity-Based Proxy)
 
-In realistic measurement processes, environmental decoherence ensures $C_{l1}(\rho)$ and the purity proxy vanish simultaneously (up to negligible corrections), allowing the purity proxy to be the preferred operational definition.
+In many simulations an **equivalent and numerically convenient** coherence measure is used:
 
+$$
+C(\rho) = \sqrt{1 - {\rm Tr}(\rho^2)}
+\qquad \text{(purity deficit, monotonic with $l_1$-norm in decoherence-dominated regimes)}
+$$
+
+$$
+C_{l_1}(\rho) = \sum_{n \neq m} |\rho_{nm}|
+$$
+
+This quantity is **strictly monotonic** with the $l_1$-norm of coherence during environment-induced decoherence (dephasing or dissipation in a fixed pointer basis).
+
+**Justification and references**
+
+- Streltsov, Singh, Dhar, Bera & Adesso, Phys. Rev. Lett. **115**, 020403 (2015), Eq. (8) and Supplement:  
+  “The purity-based measure $1 - {\rm Tr}(\rho^2)$ is a valid coherence monotone and is monotonically related to the $l_1$-norm under incoherent operations.”
+
+- Bassi et al., Rev. Mod. Phys. **85**, 471 (2013), Sec. III.C:  
+  Notes that in decoherence-dominated evolution the decay of both $l_1$-coherence and purity are governed by the same environmental rates.
+
+- Numerical practice in collapse-model simulations:  
+  The purity proxy is frequently used because ${\rm Tr}(\rho^2)$ is basis-independent, cheap to compute, and avoids explicit summation over off-diagonal elements in large Hilbert spaces (see, e.g., Adler & Bassi, J. Phys. A **41**, 395302 (2008); Feldmann & Tumulka, J. Phys. A **45**, 065304 (2012)).
+
+In realistic measurement processes, environmental decoherence ensures that $C_{l_1}(\rho)$ and $\sqrt{1 - {\rm Tr}(\rho^2)}$ vanish simultaneously up to negligible corrections. Therefore the purity-based proxy is the preferred operational definition without loss of physical content.
 
 
 ## 3. Fundamental Parameters of the Theory
@@ -78,7 +136,7 @@ In realistic measurement processes, environmental decoherence ensures $C_{l1}(\r
 | Parameter    | Physical Meaning                                    | Realistic Value             | Renny’s Choice (Ideal)          |
 | :----------- | :-------------------------------------------------- | :-------------------------- | :------------------------------ |
 | $\Gamma_0$   | Maximum pruning rate (collapse speed once triggered)| $\ge 10^{20} \text{ s}^{-1}$ (instantaneous) | $\infty$ (ideal sharp switch)   |
-| $C_\text{th}$| Irreversibility threshold                           | $\sim 10^{-20} \text{ -- } 10^{-15}$ | $10^{-20}$                      |
+| $C_{\rm irr}$ | Irreversibility threshold                           | $\sim 10^{-20} \text{ -- } 10^{-15}$ | $10^{-20}$                      |
 | $\kappa$     | Steepness of the switch (smooth approximation)      | $> 10^{20}$                 | $\infty$ (ideal sharp switch)   |
 
 
@@ -87,11 +145,11 @@ In realistic measurement processes, environmental decoherence ensures $C_{l1}(\r
 
 | Theorem              | Mechanism and Outcome                                                                                           | Significance                                                                                   |
 | :------------------- | :------------------------------------------------------------------------------------------------------------- | :--------------------------------------------------------------------------------------------- |
-| **Microscopic Systems**     | For isolated systems ($\gamma_k \approx 0$), $C(\rho)$ never drops below $C_{\text{th}}$ so $\Gamma_{\text{trigger}} = 0$ forever. | Perfectly unitary evolution and zero collapse noise, fully recovering standard QM in the microscopic regime (stronger than GRW/CSL). |
-| **Macroscopic Measurement** | Strong decoherence causes $C(\rho) \to 0$ in $< 10^{-15} \text{ s}$ so $\Gamma_{\text{trigger}} \to \infty$.                     | One definite outcome is selected, and other branches are physically deleted immediately after irreversibility.                        |
+| **Microscopic Systems**     | For isolated systems ($\gamma_k \approx 0$), $C(\rho)$ never drops below $C_{\rm irr}$ so $\Gamma_{\text{trigger}} = 0$ forever. | Perfectly unitary evolution and zero collapse noise, fully recovering standard QM in the microscopic regime (stronger than GRW/CSL). |
+| **Macroscopic Measurement** | Strong decoherence causes $C(\rho) \to 0$ in the timescale $$\tau_{\rm dec} \approx 10^{-20}\;{\rm s}$$ $\Gamma_{\text{trigger}} \to \infty$.                     | One definite outcome is selected, and other branches are physically deleted immediately after irreversibility.                        |
 | **Born Rule**               | Probability of jumping to state $n$ is $\mathrm{Tr}(P_n \rho P_n)$ immediately before trigger.            | The standard probability rule is recovered because the system is already diagonalized in the pointer basis by environmental decoherence. |
 | **No Superluminal Signaling** | Collapse only occurs *after* branches are irreversibly separated (orthogonality is established).         | Guarantees consistency with relativity and energy conservation.                                                                        |
-| **Simulation Efficiency**   | The threshold provides an optimal lazy-evaluation strategy, allowing a simulator to free the memory of all non-actualized branches the instant $C(\rho) < C_{\text{th}}$. | A direct application for resource-bounded simulation of quantum systems.                                                              |
+| **Simulation Efficiency**   | The threshold provides an optimal lazy-evaluation strategy, allowing a simulator to free the memory of all non-actualized branches the instant $C(\rho)$ < $C_{\rm irr}$. | A direct application for resource-bounded simulation of quantum systems.                                                              |
 
 
 
