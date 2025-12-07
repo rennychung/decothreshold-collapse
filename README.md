@@ -162,25 +162,36 @@ This section illustrates the core simulation results that define the **Decoheren
 
 ### Figure 1: Objective Bifurcation (Double-Slit Trajectories)
 
+<img width="1200" height="700" alt="double_slit_trajectory" src="https://github.com/user-attachments/assets/08cdf420-1764-4255-a81b-0fe2c6385049" />
+
+
 This plot shows Monte Carlo trajectories for a quantum particle under the DTC model. Superposition persists until the trigger is activated, resulting in an instantaneous, tail-free jump to a single classical path.
 
-![Monte Carlo trajectories under DTC showing superposition followed by instantaneous collapse.](figures/figure1_double_slit_trajectories.png)
-
 ### Figure 2: Coherence Collapse
+<img width="1000" height="600" alt="density_matrix_coherence" src="https://github.com/user-attachments/assets/53725933-24ab-40fa-8c8a-4c323c8824f2" />
 
 This figure demonstrates the smooth decay of coherence due to decoherence, which instantly triggers the pruning term ($\Gamma_0 \to \infty$) when the state hits the Irreversibility Threshold ($C_{\text{th}}$).
 
-![Time evolution of off-diagonal coherence C(ρ) showing the smooth decay followed by a vertical, objective collapse.](figures/figure2_density_matrix_coherence.png)
+
 
 ### Figure 3: Theoretical Bounds and Parameter Space
+<img width="640" height="480" alt="parameter_space" src="https://github.com/user-attachments/assets/6a5c1697-b70c-43df-9d46-4c3da102823e" />
 
 The DTC theory relies on the irreversibility threshold ($C_{\text{th}}$) and the maximum pruning rate ($\Gamma_0$). The plot below illustrates the allowed parameter space, confirming that the microscopic regime is safely separated from the instantaneous collapse regime.
 
-![Plot showing the theoretical boundaries and required constraints on the C_th and Gamma_0 parameter space for the DTC theory.](figures/figure3_parameter_space.png)
 
 ### Figure 4: coherence_decay_DTC
+
+<img width="7119" height="4447" alt="dtc_vs_csl" src="https://github.com/user-attachments/assets/b20399ad-9b3b-42ed-8ff8-db70a22711aa" />
+
 ### Figure 5: dtc_cat_test
+
+
+
 ### Figure 6: lazarus_test
+<img width="1100" height="650" alt="dtc_lazarus_test" src="https://github.com/user-attachments/assets/418b62b4-d958-42d2-9bdc-868891138ea0" />
+
+
 ### Figure 7: dtc_lisa
 
 ## 7. Philosophical Summary
