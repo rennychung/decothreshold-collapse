@@ -25,11 +25,11 @@ where:
 - $\{L_k\}$ are the usual Lindblad operators describing environmental decoherence, with rates $\gamma_k \ge 0$.
 - $\{P_n = |n\rangle\langle n|\}$ are orthogonal projectors onto the **pointer basis** selected by the environment, satisfying $\sum_n P_n = \mathbf{1}$.
 - $C(\rho) = \sum_{i \neq j} |\rho_{ij}|$ (or equivalent $l_1$-norm) measures total off-diagonal coherence.
-- $C_{\rm irr} \approx 10^{-20}$ is the **irreversibility threshold** the value of off-diagonal coherence below which macroscopic spatial superpositions become effectively unrecoverable due to environmental scattering — the physical scale first quantified by **Joos and Zeh** (Z. Phys. B 59, 223 (1985)).
+- $C_{\rm irr} \approx 10^{-20}$ is the **irreversibility threshold** the value of off-diagonal coherence below which macroscopic spatial superpositions become effectively unrecoverable due to environmental scattering — the physical scale first quantified by Joos and Zeh (Z. Phys. B 59, 223 (1985)).
 
 Their localisation rate $\Lambda \approx 10^{20}\;{\rm s}^{-1}\,{\rm m}^{-2}$ for a $1\,\mu{\rm m}$ dust grain interacting with the cosmic microwave background (Eq. (14) and Table 1) implies a characteristic **decoherence timescale** for spatial separations $\Delta x \simeq 1\,\mu{\rm m}$, during which coherences are suppressed by many orders of magnitude.
 
-This timescale is fully consistent with the exponential suppression of off-diagonal elements discussed by **Zurek** (Rev. Mod. Phys. 75, 715 (2003)), where a modest number of environmental correlations ($N_{\rm env} \sim 40–70$) already reduces coherences by many orders of magnitude (Sections IV.C and VII).
+This timescale is fully consistent with the exponential suppression of off-diagonal elements discussed by Zurek (Rev. Mod. Phys. 75, 715 (2003)), where a modest number of environmental correlations ($N_{\rm env} \sim 40–70$) already reduces coherences by many orders of magnitude (Sections IV.C and VII).
 
 $$
 \tau_{\rm dec} \approx 10^{-20}\;{\rm s}
@@ -126,7 +126,7 @@ This quantity is **strictly monotonic** with the $l_1$-norm of coherence during 
   Notes that in decoherence-dominated evolution the decay of both $l_1$-coherence and purity are governed by the same environmental rates.
 
 - Numerical practice in collapse-model simulations:  
-  The purity proxy is frequently used because ${\rm Tr}(\rho^2)$ is basis-independent, cheap to compute, and avoids explicit summation over off-diagonal elements in large Hilbert spaces (see, e.g., Adler & Bassi, J. Phys. A **41**, 395302 (2008); Feldmann & Tumulka, J. Phys. A **45**, 065304 (2012)).
+  The purity proxy is frequently used because ${\rm Tr}(\rho^2)$ is basis-independent, cheap to compute, and avoids explicit summation over off-diagonal elements in large Hilbert spaces (see, e.g., Adler & Bassi, J. Phys. A 41, 395302 (2008); Feldmann & Tumulka, J. Phys. A 45, 065304 (2012)).
 
 In realistic measurement processes, environmental decoherence ensures that $C_{l_1}(\rho)$ and $\sqrt{1 - {\rm Tr}(\rho^2)}$ vanish simultaneously up to negligible corrections. Therefore the purity-based proxy is the preferred operational definition without loss of physical content.
 
@@ -253,4 +253,21 @@ Open an issue or email renny.chung.physics@gmail.com.
 quantum-physics • decoherence • objective-collapse • open-quantum-systems • simulation • python • reproducible-research
 
 This repository is intended as the canonical reference for Renny’s DTC theory. The model is presented in its complete form, and no additional ingredients are proposed.
+
+## 14. References 
+## References
+
+1. S. L. Adler and A. Bassi, J. Phys. A **41**, 395302 (2008). doi:[10.1088/1751-8113/41/39/395302](https://doi.org/10.1088/1751-8113/41/39/395302)  
+2. M. Armano et al., Phys. Rev. Lett. **131**, 231401 (2023). doi:[10.1103/PhysRevLett.131.231401](https://doi.org/10.1103/PhysRevLett.131.231401)  
+3. A. Bassi, K. Lochan, S. Satin, T. P. Singh, and H. Ulbricht, Rev. Mod. Phys. **85**, 471 (2013). doi:[10.1103/RevModPhys.85.471](https://doi.org/10.1103/RevModPhys.85.471)  
+4. T. Baumgratz, M. Cramer, and M. B. Plenio, Phys. Rev. Lett. **113**, 140401 (2014). doi:[10.1103/PhysRevLett.113.140401](https://doi.org/10.1103/PhysRevLett.113.140401)  
+5. M. Carlesso, S. Donadi, L. Ferialdi, M. Paternostro, H. Ulbricht, and A. Bassi, Entropy **25**, 645 (2023). doi:[10.3390/e25040645](https://doi.org/10.3390/e25040645)  
+6. M. Carlesso, M. Paternostro, S. Sponar, and A. Bassi, Phys. Rev. Lett. **125**, 100404 (2020). doi:[10.1103/PhysRevLett.125.100404](https://doi.org/10.1103/PhysRevLett.125.100404)  
+7. S. Donadi and A. Bassi, Nat. Phys. **18**, 243 (2022). doi:[10.1038/s41567-021-01489-5](https://doi.org/10.1038/s41567-021-01489-5)  
+8. W. Feldmann and R. Tumulka, J. Phys. A **45**, 065304 (2012). doi:[10.1088/1751-8113/45/6/065304](https://doi.org/10.1088/1751-8113/45/6/065304)  
+9. G. C. Ghirardi, P. Pearle, and A. Rimini, Phys. Rev. A **42**, 78 (1990). doi:[10.1103/PhysRevA.42.78](https://doi.org/10.1103/PhysRevA.42.78)  
+10. E. Joos and H. D. Zeh, Z. Phys. B **59**, 223 (1985). doi:[10.1007/BF01397394](https://doi.org/10.1007/BF01397394)  
+11. A. Streltsov, U. Singh, H. S. Dhar, M. N. Bera, and G. Adesso, Phys. Rev. Lett. **115**, 020403 (2015). doi:[10.1103/PhysRevLett.115.020403](https://doi.org/10.1103/PhysRevLett.115.020403)  
+12. A. Vinante, M. Carlesso, A. Bassi, and A. Chiasera, Phys. Rev. Lett. **125**, 100404 (2020). doi:[10.1103/PhysRevLett.125.100404](https://doi.org/10.1103/PhysRevLett.125.100404)  
+13. W. H. Zurek, Rev. Mod. Phys. **75**, 715 (2003). doi:[10.1103/RevModPhys.75.715](https://doi.org/10.1103/RevModPhys.75.715)
 
