@@ -255,7 +255,36 @@ quantum-physics • decoherence • objective-collapse • open-quantum-systems 
 This repository is intended as the canonical reference for Renny’s DTC theory. The model is presented in its complete form, and no additional ingredients are proposed.
 
 ## 14. References 
-## References
+- Kok, P. (2021). 6.1: The Lindblad Equation. In Advanced Quantum Mechanics. Physics LibreTexts. Retrieved from https://phys.libretexts.org/Bookshelves/Quantum_Mechanics/Advanced_Quantum_Mechanics_(Kok)/06%3A_Evolution_of_Open_Quantum_Systems/6.01%3A_The_Lindblad_Equation (Last updated December 8, 2021).
+  
+- Lammert, P. E. (2025). The Gorini-Kossakowski-Sudarshan-Lindblad generation theorem, and a generalization to non-stationary evolutions. arXiv preprint arXiv:2507.11766 (v2, submitted July 15, 2025; revised August 4, 2025). https://doi.org/10.48550/arXiv.2507.11766.
+  
+- Uffink, J. (2023). The Collapse of Quantum Mechanics. In E. N. Zalta & U. Nodelman (Eds.), The Stanford Encyclopedia of Philosophy (Fall 2023 Edition). Metaphysics Research Lab, Stanford University. https://plato.stanford.edu/entries/qm-collapse/.
+- Zurek, W. H. (2003). Decoherence, einselection, and the quantum origins of the classical. Reviews of Modern Physics, 75(3), 715–775. https://doi.org/10.1103/RevModPhys.75.715.
+  
+- Chen, H., Borzì, A., Janković, D., Hartmann, J.-G., & Hervieux, P.-A. (2024). Full- and low-rank exponential Euler integrators for the Lindblad equation. arXiv preprint arXiv:2408.13601 (submitted August 24, 2024). https://doi.org/10.48550/arXiv.2408.13601.
+  
+- Wehrl, A. (2001). Entropy, von Neumann and the von Neumann entropy. Reports on Mathematical Physics, 46(3), 301–309. https://doi.org/10.1016/S0034-4877(01)00089-1 (Originally arXiv:math-ph/0102013, submitted February 8, 2001).
+  
+- Baumgratz, T., Cramer, M., & Plenio, M. B. (2014). Quantifying coherence. Physical Review Letters, 113(14), 140401. https://doi.org/10.1103/PhysRevLett.113.140401 (Originally arXiv:1311.0275, submitted November 1, 2013; revised October 6, 2014).
+  
+- Adler, S. L. (2002). Why decoherence has not solved the measurement problem: A response to P. W. Anderson. Studies in History and Philosophy of Science Part B: Studies in History and Philosophy of Modern Physics, 34(1), 135–142. https://doi.org/10.1016/S1355-2198(02)00086-1 (Originally arXiv:quant-ph/0112095, submitted December 17, 2001; revised May 10, 2002).
+  
+- Bassi, A., Deckert, D.-A., & Ferialdi, L. (2011). Breaking quantum linearity: Constraints from human perception and cosmological implications. Physical Review A, 83(4), 042108. https://doi.org/10.1103/PhysRevA.83.042108 (Originally arXiv:1011.3767, submitted November 16, 2010).
+  
+- Ciepielewski, G. S., Okon, E., & Sudarsky, D. (2020). On superdeterministic rejections of settings independence. Foundations of Physics, 50(12), 1898–1907. https://doi.org/10.1007/s10701-020-00388-3 (Originally arXiv:2008.00631, submitted August 3, 2020).
+  
+- Naik, R. (2022). The Born Rule. In Physics Book. Georgia Institute of Technology. Retrieved from https://physicsbook.gatech.edu/The_Born_Rule (Last edited November 27, 2022).
+  
+- Ghirardi, G. C., Rimini, A., & Weber, T. (1986). Unified dynamics for microscopic and macroscopic systems. Physical Review D, 34(2), 470–491. https://doi.org/10.1103/PhysRevD.34.470 (Received December 17, 1985; published July 15, 1986).
+  
+- Kiefer, C., & Joos, E. (1999). Decoherence: Concepts and examples. In P. Blanchard & A. Jadczyk (Eds.), Quantum Future: From Volta and Como to the Present and Beyond (pp. 105–128). Lecture Notes in Physics, 517. Springer. https://doi.org/10.1007/BFb0105342 (Originally arXiv:quant-ph/9803052, submitted March 19, 1998).
+  
+- Hu, B. L., Paz, J. P., & Zhang, Y. (1992). Quantum Brownian motion in a general environment: Exact master equation with nonlocal dissipation and colored noise. Physical Review D, 45(8), 2843–2861. https://doi.org/10.1103/PhysRevD.45.2843 (Received December 27, 1990; revised December 16, 1991; published April 15, 1992).
+  
+- Zurek, W. H. (2003). Decoherence, einselection, and the quantum origins of the classical. Reviews of Modern Physics, 75(3), 715–775. https://doi.org/10.1103/RevModPhys.75.715 (Originally arXiv:quant-ph/0105127, submitted May 24, 2001; revised June 19, 2003).
+
+
 
 
 
