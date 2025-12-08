@@ -177,7 +177,7 @@ This figure demonstrates the smooth decay of coherence due to decoherence, which
 ### Figure 3: Theoretical Bounds and Parameter Space
 <img width="640" height="480" alt="parameter_space" src="https://github.com/user-attachments/assets/6a5c1697-b70c-43df-9d46-4c3da102823e" />
 
-The DTC theory relies on the irreversibility threshold ($C_{\text{th}}$) and the maximum pruning rate ($\Gamma_0$). The plot below illustrates the allowed parameter space, confirming that the microscopic regime is safely separated from the instantaneous collapse regime.
+The DTC theory relies on the irreversibility threshold ($C_{\text{th}}$) and the maximum pruning rate ($\Gamma_0$). The plot above illustrates the allowed parameter space, confirming that the microscopic regime is safely separated from the instantaneous collapse regime.
 
 
 ### Figure 4: coherence_decay_DTC
