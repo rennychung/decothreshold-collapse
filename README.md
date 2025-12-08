@@ -1,4 +1,4 @@
-### DRAFT Models/Scripts/README/PAPERs need fix/polishing
+### DRAFT Models/Scripts/README/PAPERs need Fix/Polishing 
 
 # Decoherence-Triggered Collapse (DTC)
 
