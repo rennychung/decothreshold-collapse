@@ -184,15 +184,20 @@ The DTC theory relies on the irreversibility threshold ($C_{\text{th}}$) and the
 
 <img width="7119" height="4447" alt="dtc_vs_csl" src="https://github.com/user-attachments/assets/b20399ad-9b3b-42ed-8ff8-db70a22711aa" />
 
+Coherence decay in a matter-wave interferometer with realistic environmental decoherence ($\gamma_{\rm env}=10^5\;{\rm s}^{-1}$). QM, 2025-allowed CSL, and DTC are indistinguishable until ~450 µs, when DTC performs an instantaneous, tail-free collapse whereas CSL either adds imperceptible noise or is already ruled out.
+
 ### Figure 5: dtc_cat_test
 
-
+100 nm spatial superposition (laboratory-macroscopic scale). Top: initial cat state (black dashed) → final DTC state (red solid, single localised packet). Bottom: coherence decays exponentially (gray) until $C_{\rm th}=10^{-20}$, then the DTC curve terminates vertically, reflecting physical deletion of the non-actualised branch.
 
 ### Figure 6: lazarus_test
 <img width="1100" height="650" alt="dtc_lazarus_test" src="https://github.com/user-attachments/assets/418b62b4-d958-42d2-9bdc-868891138ea0" />
 
+Spin-echo sequence attempting to reverse decoherence after 10 µs. Standard quantum mechanics (thick transparent blue) partially revives coherence. DTC (solid red) collapses irreversibly at ~7.6 µs and remains dead forever — no resurrection is possible once the irreversibility threshold is crossed.
 
 ### Figure 7: dtc_lisa
+
+Torque-noise upper bound from LISA Pathfinder (dashed black line). QM + decoherence and DTC predict essentially zero collapse noise (black dots at bottom). Even the 2025-allowed CSL parameter space predicts ~10^{-23} — far above the measured bound, whereas DTC perfectly matches the null result.
 
 ## 7. Philosophical Summary
 The Decoherence-Triggered Collapse (DTC) model does not invoke consciousness, gravitational effects, or additional stochastic fields as the origin of wave-function collapse.  
