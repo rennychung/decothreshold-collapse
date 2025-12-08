@@ -162,26 +162,42 @@ This section illustrates the core simulation results that define the **Decoheren
 
 ### Figure 1: Objective Bifurcation (Double-Slit Trajectories)
 
+<img width="1200" height="700" alt="double_slit_trajectory" src="https://github.com/user-attachments/assets/08cdf420-1764-4255-a81b-0fe2c6385049" />
+
+
 This plot shows Monte Carlo trajectories for a quantum particle under the DTC model. Superposition persists until the trigger is activated, resulting in an instantaneous, tail-free jump to a single classical path.
 
-![Monte Carlo trajectories under DTC showing superposition followed by instantaneous collapse.](figures/figure1_double_slit_trajectories.png)
-
 ### Figure 2: Coherence Collapse
+<img width="1000" height="600" alt="density_matrix_coherence" src="https://github.com/user-attachments/assets/53725933-24ab-40fa-8c8a-4c323c8824f2" />
 
 This figure demonstrates the smooth decay of coherence due to decoherence, which instantly triggers the pruning term ($\Gamma_0 \to \infty$) when the state hits the Irreversibility Threshold ($C_{\text{th}}$).
 
-![Time evolution of off-diagonal coherence C(ρ) showing the smooth decay followed by a vertical, objective collapse.](figures/figure2_density_matrix_coherence.png)
+
 
 ### Figure 3: Theoretical Bounds and Parameter Space
+<img width="640" height="480" alt="parameter_space" src="https://github.com/user-attachments/assets/6a5c1697-b70c-43df-9d46-4c3da102823e" />
 
-The DTC theory relies on the irreversibility threshold ($C_{\text{th}}$) and the maximum pruning rate ($\Gamma_0$). The plot below illustrates the allowed parameter space, confirming that the microscopic regime is safely separated from the instantaneous collapse regime.
+The DTC theory relies on the irreversibility threshold ($C_{\text{th}}$) and the maximum pruning rate ($\Gamma_0$). The plot above illustrates the allowed parameter space, confirming that the microscopic regime is safely separated from the instantaneous collapse regime.
 
-![Plot showing the theoretical boundaries and required constraints on the C_th and Gamma_0 parameter space for the DTC theory.](figures/figure3_parameter_space.png)
 
 ### Figure 4: coherence_decay_DTC
+
+<img width="7119" height="4447" alt="dtc_vs_csl" src="https://github.com/user-attachments/assets/b20399ad-9b3b-42ed-8ff8-db70a22711aa" />
+
+Coherence decay in a matter-wave interferometer with realistic environmental decoherence ($\gamma_{\rm env}=10^5\;{\rm s}^{-1}$). QM, 2025-allowed CSL, and DTC are indistinguishable until ~450 µs, when DTC performs an instantaneous, tail-free collapse whereas CSL either adds imperceptible noise or is already ruled out.
+
 ### Figure 5: dtc_cat_test
+
+100 nm spatial superposition (laboratory-macroscopic scale). Top: initial cat state (black dashed) → final DTC state (red solid, single localised packet). Bottom: coherence decays exponentially (gray) until $C_{\rm th}=10^{-20}$, then the DTC curve terminates vertically, reflecting physical deletion of the non-actualised branch.
+
 ### Figure 6: lazarus_test
+<img width="1100" height="650" alt="dtc_lazarus_test" src="https://github.com/user-attachments/assets/418b62b4-d958-42d2-9bdc-868891138ea0" />
+
+Spin-echo sequence attempting to reverse decoherence after 10 µs. Standard quantum mechanics (thick transparent blue) partially revives coherence. DTC (solid red) collapses irreversibly at ~7.6 µs and remains dead forever — no resurrection is possible once the irreversibility threshold is crossed.
+
 ### Figure 7: dtc_lisa
+
+Torque-noise upper bound from LISA Pathfinder (dashed black line). QM + decoherence and DTC predict essentially zero collapse noise (black dots at bottom). Even the 2025-allowed CSL parameter space predicts ~10^{-23} — far above the measured bound, whereas DTC perfectly matches the null result.
 
 ## 7. Philosophical Summary
 The Decoherence-Triggered Collapse (DTC) model does not invoke consciousness, gravitational effects, or additional stochastic fields as the origin of wave-function collapse.  
