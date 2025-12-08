@@ -80,7 +80,7 @@ $$
 \qquad (\kappa \to \infty)
 $$
 
-Large $\kappa$ (typically $\kappa \gtrsim 10^{20}$ to $10^{22}$ in published numerical implementations of collapse models) recovers the ideal Heaviside switch to machine precision while eliminating discontinuities that cause numerical stiffness (Bassi et al., Rev. Mod. Phys. **85**, 471 (2013), Sec. V.B; Adler & Bassi, J. Phys. A **41**, 395302 (2008)).
+Large $\kappa$ (typically $\kappa \gtrsim 10^{20}$ to $10^{22}$ in published numerical implementations of collapse models) recovers the ideal Heaviside switch to machine precision while eliminating discontinuities that cause numerical stiffness (Bassi et al., Rev. Mod. Phys. **85**, 471 (2013), Sec. V.B; Adler & Bassi, J. Phys. A 41, 395302 (2008)).
 
 
 
@@ -98,9 +98,9 @@ $$
 
 This is the standard coherence monotone in the pointer basis and is the measure most commonly used in objective-collapse and quantum-Darwinism literature:
 
-- Baumgratz, Cramer & Plenio, Phys. Rev. Lett. **113**, 140401 (2014), Eq. (3)  
-- Bassi et al., Rev. Mod. Phys. **85**, 471 (2013), Sec. III.C  
-- Zurek, Rev. Mod. Phys. **75**, 715 (2003), Sec. IV.C
+- Baumgratz, Cramer & Plenio, Phys. Rev. Lett. 113, 140401 (2014), Eq. (3)  
+- Bassi et al., Rev. Mod. Phys. 85, 471 (2013), Sec. III.C  
+- Zurek, Rev. Mod. Phys. 75, 715 (2003), Sec. IV.C
 
 ### Operational Trigger Function (Purity-Based Proxy)
 
@@ -119,10 +119,10 @@ This quantity is **strictly monotonic** with the $l_1$-norm of coherence during 
 
 **Justification and references**
 
-- Streltsov, Singh, Dhar, Bera & Adesso, Phys. Rev. Lett. **115**, 020403 (2015), Eq. (8) and Supplement:  
+- Streltsov, Singh, Dhar, Bera & Adesso, Phys. Rev. Lett. 115, 020403 (2015), Eq. (8) and Supplement:  
   “The purity-based measure $1 - {\rm Tr}(\rho^2)$ is a valid coherence monotone and is monotonically related to the $l_1$-norm under incoherent operations.”
 
-- Bassi et al., Rev. Mod. Phys. **85**, 471 (2013), Sec. III.C:  
+- Bassi et al., Rev. Mod. Phys. 85, 471 (2013), Sec. III.C:  
   Notes that in decoherence-dominated evolution the decay of both $l_1$-coherence and purity are governed by the same environmental rates.
 
 - Numerical practice in collapse-model simulations:  
@@ -187,6 +187,7 @@ The DTC theory relies on the irreversibility threshold ($C_{\text{th}}$) and the
 Coherence decay in a matter-wave interferometer with realistic environmental decoherence ($\gamma_{\rm env}=10^5\;{\rm s}^{-1}$). QM, 2025-allowed CSL, and DTC are indistinguishable until ~450 µs, when DTC performs an instantaneous, tail-free collapse whereas CSL either adds imperceptible noise or is already ruled out.
 
 ### Figure 5: dtc_cat_test
+<img width="4400" height="3200" alt="dtc_cat_test_RESULTS" src="https://github.com/user-attachments/assets/e930456c-21cd-43c8-a27f-c61dc906388d" />
 
 100 nm spatial superposition (laboratory-macroscopic scale). Top: initial cat state (black dashed) → final DTC state (red solid, single localised packet). Bottom: coherence decays exponentially (gray) until $C_{\rm th}=10^{-20}$, then the DTC curve terminates vertically, reflecting physical deletion of the non-actualised branch.
 
@@ -196,8 +197,9 @@ Coherence decay in a matter-wave interferometer with realistic environmental dec
 Spin-echo sequence attempting to reverse decoherence after 10 µs. Standard quantum mechanics (thick transparent blue) partially revives coherence. DTC (solid red) collapses irreversibly at ~7.6 µs and remains dead forever — no resurrection is possible once the irreversibility threshold is crossed.
 
 ### Figure 7: dtc_lisa
+<img width="5931" height="3555" alt="lisa_dtc" src="https://github.com/user-attachments/assets/844af60a-2f1d-4b63-b1ac-159f93bb8d1e" />
 
-Torque-noise upper bound from LISA Pathfinder (dashed black line). QM + decoherence and DTC predict essentially zero collapse noise (black dots at bottom). Even the 2025-allowed CSL parameter space predicts ~10^{-23} — far above the measured bound, whereas DTC perfectly matches the null result.
+Torque-noise upper bound from LISA Pathfinder (dashed black line). QM + decoherence and DTC predict essentially zero collapse noise (black dots at bottom). Even the 2025-allowed CSL parameter space predicts $~10^{-23}$ — far above the measured bound, whereas DTC perfectly matches the null result.
 
 ## 7. Philosophical Summary
 The Decoherence-Triggered Collapse (DTC) model does not invoke consciousness, gravitational effects, or additional stochastic fields as the origin of wave-function collapse.  
@@ -211,13 +213,13 @@ Consequently, the quantum state never describes a multitude of co-existing, equa
 
 The DTC model recovers exact standard quantum mechanics for all isolated or microscopically coherent systems because the trigger rate $\Gamma_{\text{trigger}}(\rho)$ remains strictly zero as long as $C(\rho) \gg C_{\rm irr} \approx 10^{-20}$. Collapse occurs only after environmental decoherence has already suppressed off-diagonal terms below the physical irreversibility threshold derived by Joos & Zeh (1985) and Zurek (2003).
 
-This leads to sharp empirical distinctions from stochastic collapse models such as GRW and CSL, which introduce continuous, mass-dependent noise even in isolated systems (Bassi et al., Rev. Mod. Phys. **85**, 471 (2013) and subsequent updates):
+This leads to sharp empirical distinctions from stochastic collapse models such as GRW and CSL, which introduce continuous, mass-dependent noise even in isolated systems (Bassi et al., Rev. Mod. Phys. 85, 471 (2013) and subsequent updates):
 
-- **No excess microscopic noise** — DTC predicts exactly zero additional decoherence, heating, or spontaneous radiation in low-mass systems, fully compatible with the tightest current bounds on CSL parameters ($\lambda \lesssim 10^{-11}\;{\rm s}^{-1}$ at $r_C = 10^{-7}\;{\rm m}$, Carlesso et al., Phys. Rev. Lett. **121**, 130401 (2018); Vinante et al., Phys. Rev. Lett. **125**, 100404 (2020)).
+- **No excess microscopic noise** — DTC predicts exactly zero additional decoherence, heating, or spontaneous radiation in low-mass systems, fully compatible with the tightest current bounds on CSL parameters ($\lambda \lesssim 10^{-11}\;{\rm s}^{-1}$ at $r_C = 10^{-7}\;{\rm m}$, Carlesso et al., Phys. Rev. Lett. 121, 130401 (2018); Vinante et al., Phys. Rev. Lett. 125, 100404 (2020)).
 - **Sharper macroscopic localisation** — In large-spatial-superposition experiments (optomechanical systems, levitated nanoparticles, molecular interferometry), DTC produces an instantaneous, tail-free collapse once environmental decoherence crosses $C_{\rm irr}$, whereas CSL yields gradual, diffusion-like localisation.
-- **No spontaneous X-ray emission or momentum diffusion** — Unlike CSL, DTC predicts zero collapse-induced radiation or heating in cryogenic cantilevers and space-borne test masses, consistent with LISA Pathfinder null results and projected LISA sensitivity (Armano et al., Phys. Rev. Lett. **131**, 231401 (2023)).
+- **No spontaneous X-ray emission or momentum diffusion** — Unlike CSL, DTC predicts zero collapse-induced radiation or heating in cryogenic cantilevers and space-borne test masses, consistent with LISA Pathfinder null results and projected LISA sensitivity (Armano et al., Phys. Rev. Lett. 131, 231401 (2023)).
 
-Ongoing non-interferometric tests (cantilever experiments, ultracold atoms, space-based detectors) and near-term matter-wave interferometry with massive molecules or nanoparticles can directly discriminate DTC’s environment-dependent, threshold-triggered collapse from CSL’s intrinsic, continuous noise (see reviews in Carlesso & Bassi, Phys. Rep. **1005**, 1 (2023); Donadi & Bassi, Phys. Rep. **1053**, 1 (2024)). Because DTC leverages the same irreversible decoherence rates already present in standard quantum mechanics, it remains consistent with all experiments to date while offering a falsifiable prediction: collapse events are strictly correlated with the moment environmental entanglement renders alternative outcomes physically unrecoverable.
+Ongoing non-interferometric tests (cantilever experiments, ultracold atoms, space-based detectors) and near-term matter-wave interferometry with massive molecules or nanoparticles can directly discriminate DTC’s environment-dependent, threshold-triggered collapse from CSL’s intrinsic, continuous noise (see reviews in Carlesso & Bassi, Phys. Rep. 1005, 1 (2023); Donadi & Bassi, Phys. Rep. 1053, 1 (2024)). Because DTC leverages the same irreversible decoherence rates already present in standard quantum mechanics, it remains consistent with all experiments to date while offering a falsifiable prediction: collapse events are strictly correlated with the moment environmental entanglement renders alternative outcomes physically unrecoverable.
 
 ## 9. Current Limitations and Open Questions
 
