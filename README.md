@@ -25,11 +25,11 @@ where:
 - $\{L_k\}$ are the usual Lindblad operators describing environmental decoherence, with rates $\gamma_k \ge 0$.
 - $\{P_n = |n\rangle\langle n|\}$ are orthogonal projectors onto the **pointer basis** selected by the environment, satisfying $\sum_n P_n = \mathbf{1}$.
 - $C(\rho) = \sum_{i \neq j} |\rho_{ij}|$ (or equivalent $l_1$-norm) measures total off-diagonal coherence.
-- $C_{\rm irr} \approx 10^{-20}$ is the **irreversibility threshold** the value of off-diagonal coherence below which macroscopic spatial superpositions become effectively unrecoverable due to environmental scattering — the physical scale first quantified by **Joos and Zeh** (Z. Phys. B **59**, 223 (1985)).
+- $C_{\rm irr} \approx 10^{-20}$ is the **irreversibility threshold** the value of off-diagonal coherence below which macroscopic spatial superpositions become effectively unrecoverable due to environmental scattering — the physical scale first quantified by **Joos and Zeh** (Z. Phys. B 59, 223 (1985)).
 
 Their localisation rate $\Lambda \approx 10^{20}\;{\rm s}^{-1}\,{\rm m}^{-2}$ for a $1\,\mu{\rm m}$ dust grain interacting with the cosmic microwave background (Eq. (14) and Table 1) implies a characteristic **decoherence timescale** for spatial separations $\Delta x \simeq 1\,\mu{\rm m}$, during which coherences are suppressed by many orders of magnitude.
 
-This timescale is fully consistent with the exponential suppression of off-diagonal elements discussed by **Zurek** (Rev. Mod. Phys. **75**, 715 (2003)), where a modest number of environmental correlations ($N_{\rm env} \sim 40–70$) already reduces coherences by many orders of magnitude (Sections IV.C and VII).
+This timescale is fully consistent with the exponential suppression of off-diagonal elements discussed by **Zurek** (Rev. Mod. Phys. 75, 715 (2003)), where a modest number of environmental correlations ($N_{\rm env} \sim 40–70$) already reduces coherences by many orders of magnitude (Sections IV.C and VII).
 
 $$
 \tau_{\rm dec} \approx 10^{-20}\;{\rm s}
