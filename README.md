@@ -1,6 +1,12 @@
-### DRAFT Models/Scripts/README/PAPERs need Polishing 
-### All scripts/figures are currently for presentation. Not true to Math
+### DRAFT: I am currently working on the following tasks:
 
+- [ ] Convert the matplot scripts and figures to LaTeX
+- [ ] Polish figures
+- [ ] Add figures to PDF
+- [ ] Refine README, paper, and PDF
+- [ ] Finish references
+
+Figures are not up-to-date in README, only Chung_2025.pdf
 # Decoherence-Triggered Collapse (DTC)
 
 This repository contains the simulation code for a novel objective collapse theory, based on a **modified quantum master equation** that introduces an irreversibility threshold to trigger the spontaneous physical deletion of non-actualized quantum branches.
