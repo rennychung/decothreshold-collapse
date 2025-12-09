@@ -65,7 +65,6 @@ if snap_time is not None:
 
     time_offset_pre_snap = time_pre_snap + TIME_OFFSET_MU_S
 
-    # FIX: "Instant Pruning" -> "Rapid Reduction"
     plt.semilogy(time_offset_pre_snap, coherence_pre_snap,
                  color='red', lw=dtc_lw, ls='-', label='DTC (Rapid Reduction) (Right Track)')
 
@@ -83,10 +82,11 @@ else:
 
 # --- REFERENCE LINES ---
 plt.axhline(C_th, color='orange', ls='--', lw=3, label=r'$C_{\rm irr}=10^{-20}$ (Reduction threshold)')
-plt.axvline(1e-12, color='purple', ls='-.', lw=3, label='Projected 2026 sensitivity')
+
+# FIX: Changed plt.axvline to plt.axhline and added C-value to label for clarity
+plt.axhline(1e-12, color='purple', ls='-.', lw=3, label=r'Projected 2026 Sensitivity ($C \leq 10^{-12}$)')
 
 if snap_time is not None:
-    # FIX: "DTC snap" -> "Reduction Event"
     plt.axvline(snap_time, color='red', ls=':', lw=5,
                 label=f'Reduction Event $\\approx{snap_time:.0f}$ $\\mu$s (True time)')
 
@@ -96,7 +96,6 @@ plt.ylim(1e-24, 2)
 plt.xlim(0, 600)
 plt.xlabel('Time (µs)', fontsize=16)
 plt.ylabel(r'Coherence $C(t)=2|\rho_{12}(t)|$', fontsize=16)
-# FIX: Formal Title
 plt.title('DTC State Reduction vs CSL Decay — Physically Correct Model', fontsize=18)
 plt.legend(fontsize=12, loc='upper right')
 plt.grid(True, which='both', ls='--', alpha=0.4)
