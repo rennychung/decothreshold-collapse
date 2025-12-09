@@ -1,6 +1,6 @@
 # dtc_cat_test_FINAL_GUARANTEED_EXIT.py
-# FIX: The blue DTC line now terminates abruptly at the reduction time (t_trigger)
-# to visually represent the non-unitary state reduction and exit from quantum coherence.
+# FIX: The blue DTC line now terminates abruptly at the snap time (t_trigger)
+# to visually represent the non-unitary collapse and exit from quantum coherence.
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -38,9 +38,11 @@ psi_L /= np.sqrt(np.sum(np.abs(psi_L)**2) * dx)
 psi_R /= np.sqrt(np.sum(np.abs(psi_R)**2) * dx)
 psi_cat = (psi_L + psi_R) / np.sqrt(2)
 
-# === COHERENCE FUNCTION ===
+# === COHERENCE FUNCTION (Used only for initial state C(0) and final state C_dtc) ===
 def coh(psi):
+    # Approximation for coherence C(t) = 2|ρ_LR|
     rho = np.outer(psi, psi.conj())
+    # Return 2 * |Off-diagonal coherence term| (Approximation)
     return np.sum(np.abs(rho - np.diag(np.diag(rho)))) * dx
 
 # === DTC SIMULATION ===
@@ -49,11 +51,13 @@ sys.stdout.flush()
 
 # --- CORE SIMULATION LOGIC ---
 psi = psi_cat.copy()
+# Start all coherence tracking from 1.0 for a clean exponential decay plot
 C_dtc_track = [1.0]
 C_deco_track = [1.0]
 triggered = False
 t_trigger = None
 
+# Correct decay rate is Gamma = gamma_env * (Delta_x / 2sigma_x)^2
 Gamma_deco = gamma_env * (Delta_x**2) / (4*sigma_x**2)
 decay_factor = np.exp(-Gamma_deco * dt)
 
@@ -66,12 +70,13 @@ try:
         if not triggered:
             C_dtc_next = C_deco_next
             if C_dtc_next < C_th:
-                # INSTANT REDUCTION TRIGGERED
+                # INSTANT COLLAPSE TRIGGERED
                 psi = psi_L if np.random.rand() < 0.5 else psi_R # Collapse to L or R
                 triggered = True
                 t_trigger = times[i]
-                C_dtc_next = 1e-40 
+                C_dtc_next = 1e-40 # Set value very low to record snap, though we will slice it out in plotting
         else:
+            # DTC is already triggered
             C_dtc_next = 1e-40
 
         C_dtc_track.append(C_dtc_next)
@@ -86,10 +91,9 @@ try:
     print(f"Decoherence Threshold (C_th): {C_th:.1e}")
     print(f"Decoherence Rate (Gamma_deco): {Gamma_deco:.2e} s^-1")
     if t_trigger:
-        # FIX: "Collapse" -> "State Reduction"
-        print(f"✅ DTC State Reduction Triggered at t = {t_trigger*1e6:.1f} µs")
+        print(f"✅ DTC Collapse Triggered at t = {t_trigger*1e6:.1f} µs")
     else:
-        print("❌ Reduction not triggered within the time frame.")
+        print("❌ Collapse not triggered within the time frame.")
     print("==============================================")
     
     simulation_success = True
@@ -99,16 +103,18 @@ except Exception as sim_e:
     simulation_success = False
 
 
-# === PLOT GENERATION ===
+# === PLOT GENERATION (Only attempt if simulation succeeded) ===
 if simulation_success:
     print("\n[NEXT STEP] Generating plots and saving files...")
     sys.stdout.flush()
     
     try:
+        # Determine the index where the collapse occurred
         if t_trigger:
+            # Find the index of the collapse time
             snap_index = np.where(times == t_trigger)[0][0]
         else:
-            snap_index = len(times)
+            snap_index = len(times) # Plot full length if no collapse
 
         plt.figure(figsize=(11, 8))
         
@@ -117,30 +123,29 @@ if simulation_success:
         plt.plot(x*1e9, np.abs(psi_cat)**2, 'k--', lw=2, label='Initial Cat State (Superposition)')
         psi_final = psi if triggered else psi_cat
         
-        # FIX: "Collapsed" -> "Reduced"
-        plt.plot(x*1e9, np.abs(psi_final)**2, 'red', lw=3, label='DTC Final State (Reduced)')
+        # Plot the final state (one localized peak)
+        plt.plot(x*1e9, np.abs(psi_final)**2, 'red', lw=3, label='DTC Final State (Collapsed)')
         
         plt.xlabel('Position (nm)')
         plt.ylabel(r'$|\psi(x)|^2$')
-        
-        # FIX: "Instant Tail-Free Collapse" -> "Rapid Tail-Free State Reduction"
-        plt.title('DTC: Rapid Tail-Free State Reduction of Macroscopic Cat State')
+        plt.title('DTC: Instant Tail-Free Collapse of Macroscopic Cat State')
         plt.legend(loc='upper right')
         plt.grid(alpha=0.3)
 
         # --- SUBPLOT 2: COHERENCE DECAY ---
         plt.subplot(2,1,2)
         
-        # FIX: "Instant Collapse" -> "Rapid Reduction"
-        plt.semilogy(times[:snap_index+1]*1e6, C_dtc_track[:snap_index+1], 'blue', lw=3, label='DTC Coherence (Rapid Reduction)')
+        # FIX: Sliced the blue line array to terminate at the snap point
+        # This makes the line abruptly disappear after the collapse.
+        plt.semilogy(times[:snap_index+1]*1e6, C_dtc_track[:snap_index+1], 'blue', lw=3, label='DTC Coherence (Instant Collapse)')
         
+        # The gray line continues for the full duration
         plt.semilogy(times*1e6, C_deco_track, 'gray', lw=2, ls='--', label='Pure Decoherence (Exponential Decay)')
         
         plt.axhline(C_th, color='orange', ls='--', lw=2, label=r'$C_{\rm th}=10^{-20}$')
         
         if t_trigger:
-            # FIX: "Collapse at" -> "Reduction at"
-            plt.axvline(t_trigger*1e6, color='red', ls=':', lw=3, label=f'Reduction at {t_trigger*1e6:.1f} µs')
+            plt.axvline(t_trigger*1e6, color='red', ls=':', lw=3, label=f'Collapse at {t_trigger*1e6:.1f} µs')
             
         plt.ylim(1e-45, 2)
         plt.xlim(0, t_final*1e6)
