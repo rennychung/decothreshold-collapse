@@ -1,5 +1,5 @@
 ### DRAFT Models/Scripts/README/PAPERs need Polishing 
-### Chung_2025.pdf is the most up-to-date
+
 
 # Decoherence-Triggered Collapse (DTC)
 
