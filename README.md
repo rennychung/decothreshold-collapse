@@ -1,4 +1,4 @@
-###**Note on the Report Chung_2025.pdf:**
+### **Note on the Report Chung_2025.pdf:**
 Due to its large size, GitHub may show an "Unable to render code block" error when trying to view the file directly in the browser.
 
 **Solution:** Please click the **"Download"** button on the file page to view the PDF locally on your computer.
