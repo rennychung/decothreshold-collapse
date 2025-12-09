@@ -1,5 +1,5 @@
 ### DRAFT Models/Scripts/README/PAPERs need Polishing 
-
+### All scripts/figures are currently for presentation. Not true to Math
 
 # Decoherence-Triggered Collapse (DTC)
 
