@@ -108,6 +108,7 @@ Questions, comments, or feedback can be directed to:
 
 **renny.chung.physics@gmail.com**
 
+**[Click Here to View the Paper (Chung 2025 PDF)](./Chung_2025.pdf)**
 
 
 
