@@ -44,19 +44,19 @@ class RennyDoubleSlit:
         
     def propagate_and_measure(self, steps=100, traj_L_ref=None, traj_R_ref=None):
         """
-        Simulates the DTC collapse process, snapping the trajectory 
+        Simulates the DTC reduction process, projecting the trajectory 
         to one of the reference paths at the trigger time.
         """
         trajectory = []
         self.current_state = None
         
         # DTC Parameters
-        gamma = 0.15  # Decoherence Rate (controls how fast coherence drops)
-        RENNAY_THRESHOLD = 1e-4  # C_th (The Pruning Threshold)
+        gamma = 0.15  # Decoherence Rate
+        THRESHOLD = 1e-4  # C_irr (The Reduction Threshold)
         
-        # 1. Determine the SNAP POINT
+        # 1. Determine the REDUCTION POINT
         # Find the first time step (t) where coherence drops below the threshold
-        snap_index = next((t for t in range(steps) if self.coherence * np.exp(-gamma * t) < RENNAY_THRESHOLD), steps - 1)
+        snap_index = next((t for t in range(steps) if self.coherence * np.exp(-gamma * t) < THRESHOLD), steps - 1)
         
         # 2. Determine the CHOSEN OUTCOME (50/50 chance for L or R)
         if np.random.rand() > 0.5:
@@ -67,10 +67,10 @@ class RennyDoubleSlit:
         # 3. Build the DTC Trajectory
         for t in range(steps):
             if t < snap_index:
-                # Pre-Collapse: Superposition COM is exactly 0 (middle of the two paths)
+                # Pre-Reduction: Superposition COM is exactly 0
                 trajectory.append(0.0)
             else:
-                # Post-Collapse: Snap to the physical position of the chosen path
+                # Post-Reduction: Project to the physical position of the chosen path
                 if self.current_state == "L":
                     trajectory.append(traj_L_ref[t])
                 else:
@@ -96,37 +96,40 @@ traj_dtc, outcome, snap_index = sim_dtc.propagate_and_measure(
 steps = 100
 times = np.arange(steps)
 
-# 1. Determine which is the Vanished Path
+# 1. Determine which is the Nullified Path
 if outcome == "L":
     traj_vanished_ref = traj_R_ref
-    vanished_label = "Vanished Path (Right)"
+    # FIX: Changed "Vanished" to "Nullified Component"
+    vanished_label = "Nullified Component (Right)"
 else:
     traj_vanished_ref = traj_L_ref
-    vanished_label = "Vanished Path (Left)"
+    # FIX: Changed "Vanished" to "Nullified Component"
+    vanished_label = "Nullified Component (Left)"
 
-# 2. Create the Vanished Path Visualization Array (The Reversed Logic)
+# 2. Create the Nullified Path Visualization Array
 traj_vanished_vis = np.zeros(steps)
 
-# Implement the REVERSED visualization logic:
-# * Before snap (t < snap_index): Position is 0
-# * After snap (t >= snap_index): Position is its reference trajectory
+# Implement the visualization logic:
 traj_vanished_vis[snap_index:] = traj_vanished_ref[snap_index:]
 
-# Plot the Full Potential Reference Paths (Always needed for context)
+# Plot the Full Potential Reference Paths
 plt.plot(times, traj_L_ref, color='green', linestyle=':', linewidth=2, alpha=0.3, label=r"Potential Path L (Reference)")
 plt.plot(times, traj_R_ref, color='purple', linestyle=':', linewidth=2, alpha=0.3, label=r"Potential Path R (Reference)")
 
-# Plot the Vanished Path (Using the single, clear array for the reversed visualization)
+# Plot the Nullified Path
+# FIX: Updated label variable
 plt.plot(times, traj_vanished_vis, color='orange', linestyle='--', linewidth=3, alpha=0.9, 
-         label=vanished_label + " (Visualization Reversed)")
+         label=vanished_label)
 
 # Plot the Actual DTC Trajectory
-plt.plot(times, traj_dtc, color='red', linewidth=4, label=f"Observed Particle (Result: {outcome})")
+# FIX: Changed "Observed Particle" to "Projected State" (Optional, but sounds more formal)
+plt.plot(times, traj_dtc, color='red', linewidth=4, label=f"Projected State (Outcome: {outcome})")
 
 # Formatting
 plt.axhline(0, color='black', alpha=0.3, linestyle='-')
-# Final title as requested
-plt.title("DTC: Single-Particle Trajectory Collapse", fontsize=16) 
+
+# FIX: Title changed from "Collapse" to "State Reduction"
+plt.title("DTC: Single-Particle State Reduction", fontsize=16) 
 
 plt.xlabel("Time Step (Decoherence/Evolution)", fontsize=12)
 plt.ylabel("Center of Mass Position $\\langle x \\rangle$", fontsize=12)
@@ -135,8 +138,9 @@ plt.grid(True, alpha=0.2)
 
 # Trigger Annotation
 plt.axvline(x=snap_index, color='k', linestyle='--', alpha=0.7)
-# Final label as requested
-plt.text(snap_index + 2, 0.5, "Collapse Event", fontsize=10, rotation=90) 
+
+# FIX: Changed "Collapse Event" to "Reduction Event"
+plt.text(snap_index + 2, 0.5, "Reduction Event", fontsize=10, rotation=90) 
 
 plt.ylim(-8, 8) 
 plt.show()

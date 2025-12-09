@@ -1,6 +1,5 @@
 # DTC_COMPARISON_PLOT_FIXED.py
-# FIX: Now shows two lines: Blue (DTC, which snaps) and Gray (Pure Decoherence, which continues)
-# Demonstrates the core contrast between the two models.
+# Generates Figure 2: Comparison of Asymptotic Decoherence vs. DTC State Reduction
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -32,12 +31,12 @@ H = 1.0 * sig_z
 # Initial State: SUPERPOSITION (1/sqrt(2) * (|L> + |R>))
 psi0 = np.array([[1], [1]], dtype=complex) / np.sqrt(2)
 rho_dtc = np.dot(psi0, psi0.conj().T)
-rho_qm = rho_dtc.copy() # Independent copy for QM simulation
+rho_qm = rho_dtc.copy() # Independent copy for Standard QM
 
 # Parameters
 gamma_decoherence = 0.3
-coherence_threshold = 0.15 # The cut-off point
-gamma_collapse_rate = 100.0
+coherence_threshold = 0.15 # C_irr
+gamma_reduction_rate = 100.0 # High rate for rapid reduction
 
 coherence_history_dtc = []
 coherence_history_qm = []
@@ -45,24 +44,24 @@ snap_index = None
 
 # --- 3. Time Evolution ---
 for i, t in enumerate(times):
-    # Calculate Coherence
+    # Calculate Coherence (Off-diagonal magnitude)
     coherence_dtc = np.abs(rho_dtc[0, 1]) + np.abs(rho_dtc[1, 0])
     coherence_qm = np.abs(rho_qm[0, 1]) + np.abs(rho_qm[1, 0])
     
-    # --- DTC Logic: Pruning Activation ---
+    # --- DTC Logic: Threshold Check ---
     if coherence_dtc < coherence_threshold:
-        current_gamma_collapse = gamma_collapse_rate
+        current_gamma_red = gamma_reduction_rate
         if snap_index is None:
             snap_index = i
     else:
-        current_gamma_collapse = 0.0
+        current_gamma_red = 0.0
         
     # --- 1. DTC Evolution ---
     d_rho_unitary = -1j * commutator(H, rho_dtc)
     d_rho_env = gamma_decoherence * lindblad_dissipator(sig_z, rho_dtc)
-    d_rho_prune = current_gamma_collapse * (lindblad_dissipator(P_L, rho_dtc) + lindblad_dissipator(P_R, rho_dtc))
+    d_rho_reduction = current_gamma_red * (lindblad_dissipator(P_L, rho_dtc) + lindblad_dissipator(P_R, rho_dtc))
     
-    d_rho_dtc_dt = d_rho_unitary + d_rho_env + d_rho_prune
+    d_rho_dtc_dt = d_rho_unitary + d_rho_env + d_rho_reduction
     rho_dtc = rho_dtc + d_rho_dtc_dt * dt
     
     # --- 2. QM Evolution (Decoherence Only) ---
@@ -75,43 +74,38 @@ for i, t in enumerate(times):
 # --- 4. Plotting (Comparison) ---
 plt.figure(figsize=(10, 6))
 
-# Plot Pure Decoherence (QM) - Gray line continues
-plt.plot(times, coherence_history_qm, color='gray', linestyle='--', linewidth=2,
-         label='Pure Decoherence (Standard QM)')
+# Plot Pure Decoherence (QM) - Gray line
+plt.plot(times, coherence_history_qm, color='gray', linestyle='--', linewidth=2, alpha=0.6,
+         label='Asymptotic Decoherence (Standard QM)')
 
-# Plot DTC Coherence - Blue line terminates at snap_index
-if snap_index is not None:
-    # Plot only up to the snap index to show the abrupt termination
-    times_dtc = times[:snap_index + 1]
-    history_dtc = coherence_history_dtc[:snap_index + 1]
-    
-    plt.plot(times_dtc, history_dtc, color='blue', linewidth=3,
-             label='DTC Objective Collapse')
-else:
-     # If no snap, plot the whole thing
-    plt.plot(times, coherence_history_dtc, color='blue', linewidth=3,
-             label='DTC Objective Collapse (No Snap)')
+# Plot DTC Coherence - Blue line
+plt.plot(times, coherence_history_dtc, color='blue', linewidth=3,
+         label='DTC Objective Reduction')
 
 # Plot Threshold
 plt.axhline(coherence_threshold, color='red', linestyle=':', linewidth=2,
-            label='Irreversibility Threshold ($C_{th}$)')
+            label=r'Critical Threshold ($C_{irr}$)')
 
 # Annotations
-plt.title("DTC vs. Standard Decoherence: Coherence Dynamics", fontsize=14)
+plt.title("DTC State Reduction vs. Standard Decoherence", fontsize=14)
 plt.xlabel("Time (arbitrary units)")
-plt.ylabel("Coherence (Off-Diagonal Magnitude)")
+plt.ylabel(r"Coherence $|\rho_{01}| + |\rho_{10}|$")
 plt.legend(fontsize=11)
 plt.grid(True, alpha=0.3)
 
-# Add text annotations for clarity
+# Add text annotations
 if snap_index is not None:
     t_snap = times[snap_index]
     
-    # Annotation for Collapse
-    plt.text(t_snap * 1.05, 0.05, "OBJECTIVE\nCOLLAPSE", color='red', fontsize=10, fontweight='bold', va='center')
+    # Annotation for Reduction (Left side)
+    plt.text(t_snap * 1.1, 0.05, "RAPID STATE\nREDUCTION", color='blue', fontsize=10, fontweight='bold', va='center')
     
-    # Annotation for Environmental Decoherence
-    plt.text(t_snap * 0.35, 0.25, "Environmental Decoherence", color='gray', fontsize=10, ha='center')
+    # Annotation for Environmental Decoherence (MOVED TO RIGHT)
+    # FIX: Changed x-position from (t_snap * 0.35) to (t_snap * 1.6)
+    # This places it in the "tail" region where the lines are separated.
+    plt.text(t_snap * 1.6, 0.25, "Environmental\nDecoherence", color='gray', fontsize=10, ha='center')
 
-plt.ylim(0, 0.8)
+plt.ylim(-0.02, 0.8) 
+plt.tight_layout()
+plt.savefig('DTC_COMPARISON_PLOT_FIXED.png', dpi=300)
 plt.show()

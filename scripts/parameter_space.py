@@ -1,5 +1,5 @@
 # bounds_plot.py
-# Generates Figure 4 of the DTIP paper (experimental constraints 2025)
+# Generates Figure 4 of the DTC paper (experimental constraints 2025)
 import numpy as np, matplotlib.pyplot as plt
 
 Gamma0 = np.logspace(15, 30, 500)
@@ -9,7 +9,6 @@ G, C = np.meshgrid(Gamma0, Cth)
 plt.figure(figsize=(6.4, 4.8))
 
 # 1. Plot the Allowed Region (Green)
-# This represents the "safe" zone compatible with current physics.
 plt.fill_between(Gamma0, 1e-25, 1e-8, color='#90EE90', alpha=0.7, label='Allowed region (2025)')
 
 # 2. Plot the Crosshairs (The Chosen Parameters)
@@ -19,14 +18,18 @@ plt.axhline(1e-20, color='darkorange', ls='--', lw=2, label=r'Chosen $C_{\rm th}
 # 3. Setup Axes
 plt.loglog()
 plt.xlim(1e16, 1e30)
-
-# CHANGE HERE: Increased upper limit to 1e-5 to show the "Forbidden" white space above.
 plt.ylim(1e-25, 1e-5) 
 
-plt.xlabel(r'Pruning rate $\Gamma_0$ [s$^{-1}$]')
+# FIX: "Pruning rate" -> "Reduction rate"
+plt.xlabel(r'Reduction rate $\Gamma_0$ [s$^{-1}$]')
 plt.ylabel(r'Coherence threshold $C_{\rm th}$')
-plt.title('DTIP parameter space vs. 2025 experimental bounds')
-plt.legend(loc='lower left')
+
+# FIX: "DTIP" -> "DTC"
+plt.title('DTC parameter space vs. 2025 experimental bounds')
+
+# FIX: Moved legend to top right to avoid covering the data
+plt.legend(loc='upper right')
+
 plt.grid(alpha=0.3)
 plt.tight_layout()
 plt.savefig('bounds_plot.pdf', dpi=300)
