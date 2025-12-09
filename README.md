@@ -13,7 +13,6 @@ This repository accompanies the research preprint:
 
 **R. Chung (2025).** *Decoherence-Triggered Collapse: A Deterministic Effective Theory of the Quantum-to-Classical Transition.*
 
----
 
 ## Overview
 
@@ -57,6 +56,57 @@ Coherence is quantified by:
 $\[C(\rho) = \sqrt{1 - \mathrm{Tr}(\rho^2)}\]$
 
 Pointer states $\( P_n \)$ correspond to a spatial grid, selected by environmental scattering physics.
+
+
+## Numerical Methods
+
+The numerical framework uses:
+
+* Fourth-order Runge–Kutta with adaptive step size
+* Logistic smoothing of the collapse trigger for stability
+* Coherence monitoring at each timestep
+* Double-precision integration
+* Verification against analytically solvable regimes
+
+These procedures ensure accurate collapse timing and energy conservation.
+
+
+## Comparison with Other Collapse Models
+
+| Feature | DTC | CSL | GRW |
+|:--------|:------|:------|:------|
+| **Trigger** | Decoherence threshold | Continuous noise | Poisson jumps |
+| **Microscopic Noise** | None | Present | Present |
+| **Collapse Type** | Sharp, tail-free | Gradual | Instantaneous |
+| **Free Parameters** | None | Two | Two |
+| **Vacuum Heating** | None | Yes | Yes |
+| **Experimental Safety** | Fully consistent | Constrained | Constrained |
+
+DTC avoids the continuous stochastic forcing characteristic of CSL/GRW and is consistent with all high-precision non-interferometric bounds (e.g., LISA Pathfinder).
+
+
+## Experimental Relevance
+
+DTC yields unique predictions observable in:
+
+* large-mass matter-wave interferometers
+* decoherence and revival experiments
+* spin-echo (Lazarus) protocols
+* optomechanical systems
+* space-based gravitational wave platforms
+
+Notably, once $\( C(\rho) < C_{\mathrm{irr}} \)$, coherence cannot be restored, even with perfect echo pulses. This distinguishes DTC sharply from standard quantum mechanics.
+
+
+## Citing
+
+If you use this repository in academic work, please cite: R. Chung (2025). "Decoherence-Triggered Collapse: A Deterministic Effective Theory of the Quantum-to-Classical Transition."
+
+## Contact
+
+Questions, comments, or feedback can be directed to:
+
+**renny.chung.physics@gmail.com**
 
 
 
