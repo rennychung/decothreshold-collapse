@@ -5,11 +5,13 @@ Due to its large size, GitHub may show an "Unable to render code block" error wh
 
 ### DRAFT: I am currently working on the following tasks:
 
+- [ ] Conduct extensive literature review for Chung_2025.pdf
+- [ ] Use/Add references accordingly
 - [ ] Convert the matplot scripts and figures to LaTeX
-- [ ] Polish figures
+- [ ] Edit/polish figures
+- [ ] Polish/fix scripts
 - [ ] Add figures to PDF
 - [ ] Refine README, paper, and PDF
-- [ ] Finish references
 
 Figures are not up-to-date in README, only Chung_2025.pdf
 # Decoherence-Triggered Collapse (DTC)
