@@ -5,8 +5,10 @@ Due to its large size, GitHub may show an "Unable to render code block" error wh
 
 ### DRAFT: I am currently working on the following tasks:
 
+- [ ] Main Priority (15% Completed):
 - [ ] Conduct extensive literature review for Chung_2025.pdf
 - [ ] Use/Add references accordingly
+- [ ] Lower Priority (0%)
 - [ ] Convert the matplot scripts and figures to LaTeX
 - [ ] Edit/polish figures
 - [ ] Polish/fix scripts
