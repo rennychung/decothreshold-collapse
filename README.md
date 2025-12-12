@@ -1,6 +1,22 @@
-### DRAFT Models/Scripts/README/PAPERs need Polishing 
-### All scripts/figures are currently for presentation. Not true to Math
+### **Note on the Report Chung_2025.pdf:**
+Due to its large size, GitHub may show an "Unable to render code block" error when trying to view the file directly in the browser.
 
+**Solution:** Please click the **"Download"** button on the file page to view the PDF locally on your computer.
+
+### DRAFT: I am currently working on the following tasks:
+
+- [ ] Main Priority (15% Completed):
+- [ ] Convert Chung_2025 to RevTex4.2 Preprint
+- [ ] Conduct extensive literature review for Chung_2025.pdf
+- [ ] Use/Add references accordingly
+- [ ] Lower Priority (0%)
+- [ ] Convert the matplot scripts and figures to LaTeX
+- [ ] Edit/polish figures
+- [ ] Polish/fix scripts
+- [ ] Add figures to PDF
+- [ ] Refine README, paper, and PDF
+
+Figures are not up-to-date in README, only Chung_2025.pdf
 # Decoherence-Triggered Collapse (DTC)
 
 This repository contains the simulation code for a novel objective collapse theory, based on a **modified quantum master equation** that introduces an irreversibility threshold to trigger the spontaneous physical deletion of non-actualized quantum branches.
