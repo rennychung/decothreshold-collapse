@@ -6,6 +6,7 @@ Due to its large size, GitHub may show an "Unable to render code block" error wh
 ### DRAFT: I am currently working on the following tasks:
 
 - [ ] Main Priority (15% Completed):
+- [ ] Convert Chung_2025 to RevTex4.2 Preprint
 - [ ] Conduct extensive literature review for Chung_2025.pdf
 - [ ] Use/Add references accordingly
 - [ ] Lower Priority (0%)
